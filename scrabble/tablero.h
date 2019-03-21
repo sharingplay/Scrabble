@@ -6,10 +6,10 @@
 class tablero
 {
 private:
-    lista  posicionesLibres;
+    lista posicionesLibres;
     lista posicionesOcupadas;
 public:
     tablero();
 };
-
+//asd
 #endif // TABLERO_H
