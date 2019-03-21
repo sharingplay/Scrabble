@@ -1,0 +1,19 @@
+#define FICHA_H
+
+
+class ficha{
+private:
+    char letra;
+    int valor,x,y;
+    
+
+public:
+    void setLetra(char letra);
+    void setValor(int valor);
+    void setX(int x);
+    void setY(int y);
+    int getValor();
+    char getLetra();
+    int getX();
+    int getY();
+};
