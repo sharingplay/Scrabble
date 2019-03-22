@@ -1,4 +1,17 @@
 #include "ficha.h"
+#include "QGraphicsScene"
+
+ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
+}
+    //Dibujar
+    ficha::ficha(char letra){
+        switch (letra) {
+        case 'A': setPixmap(QPixmap(":/imagenes/A.png"));
+            break;
+        case 'B': setPixmap(QPixmap(":/images/B.png"));
+        }
+
+    }
 
 void ficha::setX(int x){
     this->x = x;

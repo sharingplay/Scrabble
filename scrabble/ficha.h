@@ -1,14 +1,18 @@
 #ifndef FICHA_H
 #define FICHA_H
+#include<QObject>
+#include <QGraphicsPixmapItem>
+#include <QGraphicsItem>
 
-
-class ficha
+class ficha: public QObject, public QGraphicsPixmapItem
 {
+    Q_OBJECT
 private:
     char letra;
     int valor,x,y;
 public:
-    ficha();
+    ficha(QGraphicsItem * parent = nullptr);
+    ficha (char letra);
     void setX(int x);
     void setY(int y);
     void setLetra(char letra);
