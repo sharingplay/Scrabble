@@ -10,7 +10,7 @@ public:
     void setValor(ficha);
     ficha getValor();
     void setSiguiente(nodo* nodo);
-    nodo getSiguiente();
+    nodo* getSiguiente();
 
     nodo(ficha* ficha,nodo*siguiente);
     nodo();
