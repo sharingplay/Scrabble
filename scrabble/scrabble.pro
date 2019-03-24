@@ -30,14 +30,18 @@ SOURCES += \
     nodo.cpp \
     lista.cpp \
     tablero.cpp \
-    jugador.cpp
+    jugador.cpp \
+    bolsa.cpp \
+    palabra.cpp
 
 HEADERS += \
     ficha.h \
     lista.h \
     tablero.h \
     jugador.h \
-    nodo.h
+    nodo.h \
+    bolsa.h \
+    palabra.h
 
 FORMS += \
         mainwindow.ui

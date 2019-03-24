@@ -24,6 +24,14 @@ void jugador::setcantFichas(int cantFichas){
 int jugador::getcantFichas(){
     return this->cantFichas;
 }
+void jugador::agregarFicha(ficha* ficha){
+    nodo* nodoficha;
+    nodoficha->setValor(ficha);
+    listaFichas->insertarFinal(nodoficha);
+}
+lista* jugador::getlista(){
+    return listaFichas;
+}
     jugador::jugador(){
     this->setTurno(false);
     this->setNombre("");
