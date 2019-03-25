@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/edgargonza/Desktop/ScrabbleProyServ/main.cpp
+stdio.h
+-
+arpa/inet.h
+-
+sys/socket.h
+-
+cstdlib
+-
+cstring
+-
+stdlib.h
+-
+

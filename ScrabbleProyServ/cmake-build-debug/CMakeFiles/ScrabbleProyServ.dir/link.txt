@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ScrabbleProyServ.dir/main.cpp.o  -o ScrabbleProyServ 

@@ -1,0 +1,3 @@
+/home/edgargonza/Desktop/ScrabbleProyServ/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/edgargonza/Desktop/ScrabbleProyServ/cmake-build-debug/CMakeFiles/ScrabbleProyServ.dir
+/home/edgargonza/Desktop/ScrabbleProyServ/cmake-build-debug/CMakeFiles/edit_cache.dir
