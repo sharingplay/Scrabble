@@ -81,3 +81,4 @@ void tablero::Puntuacion(){
         i++;
     }
 }
+

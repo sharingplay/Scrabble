@@ -4,8 +4,11 @@ palabra::palabra()
 {
 }
 
-bool palabra::verificar(nodo* final){
+bool palabra::verificar(nodo* final,lista* tablero){
     nodo* actual= final;
+    if(!centro(tablero)){
+        //no hay ficha en el centro
+    }
     if(actual->getUp()->getEstado()==true){
         while (actual->getUp()->getEstado()==true) {
             actual= actual->getUp();
@@ -22,6 +25,23 @@ bool palabra::verificar(nodo* final){
         leerDerecha(actual);
     }
 
+}
+bool palabra::centro(lista* tablero){
+    nodo* actual= tablero->Head;
+    int i=0;
+    while(i<7){
+        actual= actual->getRight();
+    }
+    i=0;
+    while (i<7) {
+        actual=actual->getDown();
+    }
+    if(actual->getEstado()){
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 bool palabra::leerAbajo(nodo* final){
