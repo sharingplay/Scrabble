@@ -16,6 +16,10 @@ private:
     bool estado=false;
     bool puntosAsignados=false;
     int puntuacion;
+    nodo* left;
+    nodo* right;
+    nodo* up;
+    nodo* down;
 
 public:
     void setValor(ficha* valor);
@@ -38,6 +42,10 @@ public:
     bool getPuntosAsignados();
     void setPuntuacion(int puntuacion);
     int getPuntuacion();
+    void setLeft(nodo* x);
+    void setRight(nodo* x);
+    void setUp(nodo* x);
+    void setDown(nodo* x);
 
 
     nodo(ficha* ficha,nodo*siguiente);

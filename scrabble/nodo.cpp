@@ -71,3 +71,18 @@ void nodo::setValor(ficha* ficha){
 ficha* nodo::getValor(){
     return this->valor;
 }
+void nodo::setLeft(nodo* x){
+    this->left=x;
+}
+
+void nodo::setRight(nodo *x){
+    this->right=x;
+}
+
+void nodo::setUp(nodo* x){
+    this->up=x;
+}
+
+void nodo::setDown(nodo* x){
+    this->down=x;
+}

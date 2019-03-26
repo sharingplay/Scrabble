@@ -17,11 +17,13 @@ void lista::insertarFinal(nodo *nuevoNodo){
         Head = nuevoNodo;
         Head->setSiguiente(nullptr);
     }
+    size++;
 }
 
 void lista::insertarInicio(nodo *nuevoNodo){
     nuevoNodo->setSiguiente(Head);
     Head = nuevoNodo;
+    size++;
 }
 
 void lista::display(){
@@ -35,3 +37,18 @@ void lista::display(){
         }
     }
 }
+
+int lista::getSize() {
+        return size;
+}
+
+nodo* lista::getNode(int x, int y){
+        nodo *current=Head;
+        if (current->getX()==x && current->gety()==y){
+            return current;}
+        else{
+            *current=*current->getSiguiente();
+                }
+        return nullptr;
+}
+

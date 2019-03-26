@@ -21,6 +21,12 @@ void tablero::generar(){
     }
     Puntuacion();
 }
+
+void tablero::adjacentes(lista posiciones){
+    adjacent* lim = new adjacent();
+    lim->Seters(posiciones);
+}
+
 nodo* tablero::acomodar(int x, int y, ficha* ficha){
     nodo* actual= posiciones.Head;
     nodo* anterior= posiciones.Head;
