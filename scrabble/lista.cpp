@@ -1,11 +1,12 @@
 #include "lista.h"
-
+#include <QDebug>
 lista::lista()
 {
 
 }
-void lista::insertarFinal(nodo *nuevoNodo){
-    nodo *actual=Head;
+void lista::insertarFinal(nodo* nuevoNodo){
+    //std::cout << Head << std::endl;
+    nodo* actual= Head;
     if(Head !=nullptr){
         while(actual->getSiguiente()!=nullptr){
             actual=actual->getSiguiente();

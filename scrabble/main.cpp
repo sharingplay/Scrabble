@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
     ficha * fichaC = new ficha('C');
     ficha * fichaA2 = new ficha('A');
     ficha * fichaC2 = new ficha('C');
-    tablero * tableroFondo = new tablero();
+    tablero* tableroFondo = new tablero();
+
 
     fichaA->setFlag(QGraphicsItem:: ItemIsFocusable);
     fichaA->setFocus();
@@ -52,5 +53,7 @@ int main(int argc, char *argv[])
     escena->addItem(fichaA2);
     escena->addItem(fichaC);
     escena->addItem(fichaC2);
+
+
     return a.exec();
 }

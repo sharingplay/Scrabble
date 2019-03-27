@@ -6,20 +6,20 @@
 #include <QGraphicsPixmapItem>
 #include "adjacent.h"
 
-
 class tablero: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 
 private:
-lista posiciones;
+//lista* posiciones;
 
 public:
+    lista* posiciones;
     tablero(QGraphicsItem * parent = nullptr);
     void generar();
     nodo* acomodar(int x, int y,ficha* ficha);
-    lista getPosiciones();
+    lista* getPosiciones();
     void Puntuacion();
-    void adjacentes(lista x);
+    void adjacentes(lista* x);
 };
 #endif // TABLERO_H
