@@ -10,11 +10,8 @@ class tablero: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 
-private:
-//lista* posiciones;
-
 public:
-    lista* posiciones;
+    lista *posiciones = new lista();
     tablero(QGraphicsItem * parent = nullptr);
     void generar();
     nodo* acomodar(int x, int y,ficha* ficha);

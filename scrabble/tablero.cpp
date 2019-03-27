@@ -10,16 +10,16 @@ void tablero::generar(){
     int y=0;
     for (int i=0;i!=15;i++) {
         for (int j=0;j!=15;j++) {
-            nodo* celda = new nodo();
+            nodo *celda = new nodo();
             std::cout << "holi" << std::endl;
             celda->setX(x);
             celda->setY(y);
             celda->setEstado(false);
             std::cout << celda << std::endl;
             posiciones->insertarFinal(celda);
-            j++;
             x+=51;
         }
+        x=0;
         y+=51;
     }
     std::cout << "hola" << std::endl;
@@ -72,17 +72,27 @@ void tablero::Puntuacion(){
     int i=0;
     nodo* actual= posiciones->Head;
     actual->setPuntuacion(1);
-    while(i<226){
+    while(i<224){
         if (i==7||i==14||i==105||i==119||i==210||i==217||i==224){
             actual->setPuntuacion(1);
+            actual=actual->getSiguiente();
+            i++;
         }if(i==3||i==11||i==36||i==38||i==45||i==52||i==59||i==92||i==96||i==98||i==102||i==108||i==116||i==122||i==126||i==128||i==132||i==165||i==172||i==179||i==186||i==188||i==213||i==221){
             actual->setPuntuacion(2);
+            actual=actual->getSiguiente();
+            i++;
         }if(i==20||i==24||i==76||i==80||i==84||i==88||i==136||i==140||i==144||i==148||i==215||i==219){
             actual->setPuntuacion(3);
+            actual=actual->getSiguiente();
+            i++;
         }if(i==16||i==29||i==32||i==42||i==48||i==56||i==64||i==70||i==154||i==160||i==168||i==176||i==182||i==192||i==196||i==208){
             actual->setPuntuacion(4);
-        }
+            actual=actual->getSiguiente();
+            i++;
+        }else{
         actual=actual->getSiguiente();
         i++;
+        }
     }
+    std::cout <<"puntuacion"<< std::endl;
 }

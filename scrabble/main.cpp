@@ -5,6 +5,8 @@
 #include <QGraphicsView>
 #include "ficha.h"
 #include "tablero.h"
+#include "nodo.h"
+#include "lista.h"
 
 int main(int argc, char *argv[])
 {

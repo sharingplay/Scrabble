@@ -1,11 +1,11 @@
 #ifndef LISTA_H
 #define LISTA_H
-#include "nodo.h"
+#include"nodo.h"
 class nodo;
 class lista
 {
 public:
-    nodo* Head = 0;
+    nodo* Head = nullptr;
     int size = 0;
     void insertarFinal(nodo* nuevoNodo);
     void insertarInicio(nodo* nuevoNodo);
