@@ -11,6 +11,12 @@ class tablero: public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 
 public:
+
+    static tablero& getInstance(){
+               static tablero instance;
+               return instance;
+    }
+
     lista *posiciones = new lista();
     tablero(QGraphicsItem * parent = nullptr);
     void generar();

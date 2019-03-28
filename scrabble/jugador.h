@@ -13,7 +13,7 @@ private:
     int puntaje;
     int cantFichas;
     bool turno;
-    lista* listaFichas;
+    lista* listaFichas = new lista ();
 
 public:
     jugador();

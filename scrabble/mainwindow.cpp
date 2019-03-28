@@ -14,6 +14,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_3_clicked()
 {
+
+    jugador *jugador1 = new jugador();
+    //setear nombre del jugador (FALTA)............................
+
+    //crea bolsa y reparte fichas al jugador
+    bolsa *bolsaA = new bolsa();
+    bolsaA->crear();
+    bolsaA->repartir(7,jugador1);
+    std::cout<<jugador1->getcantFichas()<<endl;
     //crear escena
     static QGraphicsScene * escena = new QGraphicsScene();
 

@@ -10,6 +10,8 @@
 #include "tablero.h"
 #include "nodo.h"
 #include "lista.h"
+#include "bolsa.h"
+#include "jugador.h"
 
 namespace Ui {
 class MainWindow;

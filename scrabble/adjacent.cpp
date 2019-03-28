@@ -6,14 +6,11 @@ adjacent::adjacent(){}
 
 void adjacent::Seters (lista* malla){
     for (int i = 0; i < 765; i+=51) {
-        std::cout << "Linea en y: " << i << std::endl;
         int y=i;
         for (int j = 0; j < 765; j+=51) {
-            std::cout << "Linea en x: " << j << std::endl;
             int x=j;
             nodo* nodeset = malla->getNode(x,y);
             if (nodeset->getX()/51==0 && nodeset->gety()/51==0) {
-                std::cout << "0,0" << std::endl;
                 nodeset->setLeft(nullptr);
                 nodeset->setUp(nullptr);
                 nodeset->setDown(malla->getNode(x,y+51));

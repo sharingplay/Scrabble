@@ -5,7 +5,6 @@ lista::lista()
 
 }
 void lista::insertarFinal(nodo* nuevoNodo){
-    std::cout << Head << std::endl;
     nodo* actual = Head;
     if(Head != nullptr){
         while(actual->getSiguiente()!=nullptr){

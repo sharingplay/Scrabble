@@ -11,18 +11,15 @@ void tablero::generar(){
     for (int i=0;i!=15;i++) {
         for (int j=0;j!=15;j++) {
             nodo *celda = new nodo();
-            std::cout << "holi" << std::endl;
             celda->setX(x);
             celda->setY(y);
             celda->setEstado(false);
-            std::cout << celda << std::endl;
             posiciones->insertarFinal(celda);
             x+=51;
         }
         x=0;
         y+=51;
     }
-    std::cout << "hola" << std::endl;
     adjacentes(this->posiciones);
     Puntuacion();
 }
@@ -94,5 +91,4 @@ void tablero::Puntuacion(){
         i++;
         }
     }
-    std::cout <<"puntuacion"<< std::endl;
 }
