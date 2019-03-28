@@ -9,8 +9,11 @@ private:
     int puntuacion;
 public:
     palabra();
-    bool verificar(tablero tablero);
-    int puntuacio();
+    bool verificar(nodo* final,lista* tablero);
+    int asignarPuntuacion(nodo* final, int direccion);
+    bool leerAbajo(nodo* final);
+    bool leerDerecha(nodo* final);
+    bool centro(lista* tablero)//hola sahid rember
 
 };
 
