@@ -33,7 +33,8 @@ SOURCES += \
     jugador.cpp \
     bolsa.cpp \
     palabra.cpp \
-    adjacent.cpp
+    adjacent.cpp \
+    mainwindow.cpp
 
 HEADERS += \
     ficha.h \
@@ -43,10 +44,12 @@ HEADERS += \
     nodo.h \
     bolsa.h \
     palabra.h \
-    adjacent.h
+    adjacent.h \
+    mainwindow.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
