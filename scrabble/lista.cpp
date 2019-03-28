@@ -1,12 +1,13 @@
 #include "lista.h"
-
+#include <QDebug>
 lista::lista()
 {
 
 }
-void lista::insertarFinal(nodo *nuevoNodo){
-    nodo *actual=Head;
-    if(Head !=nullptr){
+void lista::insertarFinal(nodo* nuevoNodo){
+    std::cout << Head << std::endl;
+    nodo* actual = Head;
+    if(Head != nullptr){
         while(actual->getSiguiente()!=nullptr){
             actual=actual->getSiguiente();
         }
@@ -20,7 +21,7 @@ void lista::insertarFinal(nodo *nuevoNodo){
     size++;
 }
 
-void lista::insertarInicio(nodo *nuevoNodo){
+void lista::insertarInicio(nodo* nuevoNodo){
     nuevoNodo->setSiguiente(Head);
     Head = nuevoNodo;
     size++;
@@ -44,11 +45,13 @@ int lista::getSize() {
 
 nodo* lista::getNode(int x, int y){
         nodo *current=Head;
-        if (current->getX()==x && current->gety()==y){
-            return current;}
-        else{
-            *current=*current->getSiguiente();
+        while (current !=nullptr){
+            if (current->getX()==x && current->gety()==y){
+                return current;}
+            else{
+                current= current->getSiguiente();
                 }
+        }
         return nullptr;
 }
 

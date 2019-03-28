@@ -8,6 +8,9 @@ class nodo
 private:
     ficha* valor = nullptr;
     nodo* siguiente = nullptr;
+    nodo* anterior = nullptr;
+    nodo* arriba = nullptr;
+    nodo* abajo = nullptr;
     int x= 0;
     int y=0;
     bool estado=false;
@@ -23,6 +26,12 @@ public:
     ficha* getValor();
     void setSiguiente(nodo* nodo);
     nodo* getSiguiente();
+    void setAnterior(nodo* nodo);
+    nodo* getAnterior();
+    void setArriba(nodo* nodo);
+    nodo* getArriba();
+    void setAbajo(nodo* nodo);
+    nodo* getAbajo();
     void setX(int x);
     void setY(int y);
     int getX();
@@ -37,11 +46,6 @@ public:
     void setRight(nodo* x);
     void setUp(nodo* x);
     void setDown(nodo* x);
-    nodo* getLeft();
-    nodo* getRight();
-    nodo* getUp();
-    nodo* getDown();
-
 
 
     nodo(ficha* ficha,nodo*siguiente);

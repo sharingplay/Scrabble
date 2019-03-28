@@ -6,17 +6,12 @@ bolsa::bolsa()
 }
 
 nodo* bolsa::repartir(int cantidad, jugador jugador){
-    int x= 102;
-    int y= 820;
     while(cantidad>0){
         if(listaFichas->Head != nullptr){
               nodo* toReturn = listaFichas->Head;
-              toReturn->getValor()->setX(x);
-              toReturn->getValor()->setY(y);
               listaFichas->Head = listaFichas->Head->getSiguiente();
               toReturn->setSiguiente(jugador.getlista()->Head);
               jugador.getlista()->Head= toReturn;
-              x+=51;
             }
         cantidadFichas-=1;
         cantidad-=1;

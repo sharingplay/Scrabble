@@ -140,15 +140,3 @@ ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     void ficha::mouseReleaseEvent(QGraphicsSceneMouseEvent *event){
 
     }
-    void ficha::setY(int y){
-        this->y = y;
-    }
-    void ficha::setX(int x){
-        this->x = x;
-    }
-    int ficha::getX(){
-        return this->x;
-    }
-    int ficha::getY(){
-        return this->y;
-    }

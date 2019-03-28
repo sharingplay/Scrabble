@@ -14,6 +14,24 @@ void nodo::setSiguiente (nodo* nodo){
 nodo* nodo::getSiguiente(){
     return this->siguiente;
 }
+void nodo::setAnterior (nodo* nodo){
+        this->anterior = nodo;
+}
+nodo* nodo::getAnterior(){
+    return this->anterior;
+}
+void nodo::setArriba (nodo* nodo){
+        this->arriba = nodo;
+}
+nodo* nodo::getArriba(){
+    return this->arriba;
+}
+void nodo::setAbajo (nodo* nodo){
+        this->abajo = nodo;
+}
+nodo* nodo::getAbajo(){
+    return this->abajo;
+}
 
 //set coordenadas
 void nodo::setX(int x){
@@ -67,16 +85,4 @@ void nodo::setUp(nodo* x){
 
 void nodo::setDown(nodo* x){
     this->down=x;
-}
-nodo* nodo::getLeft(){
-    return this->left;
-}
-nodo* nodo::getRight(){
-    return this->right;
-}
-nodo* nodo::getUp(){
-    return this->up;
-}
-nodo* nodo::getDown(){
-    return this->down;
 }
