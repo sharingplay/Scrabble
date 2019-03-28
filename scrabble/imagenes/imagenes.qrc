@@ -28,7 +28,8 @@
         <file>Z.png</file>
         <file>J.png</file>
         <file>K.png</file>
-        <file>menu.png</file>
         <file>madera.jpg</file>
+        <file>../../../../Downloads/menu.jpg</file>
+        <file>menu.jpg</file>
     </qresource>
 </RCC>
