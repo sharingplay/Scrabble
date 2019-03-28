@@ -13,7 +13,7 @@ public:
     int asignarPuntuacion(nodo* final, int direccion);
     bool leerAbajo(nodo* final);
     bool leerDerecha(nodo* final);
-    bool centro(lista* tablero)//hola sahid rember
+    bool centro(lista* tablero);
 
 };
 

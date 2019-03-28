@@ -15,7 +15,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_3_clicked()
 {
     //crear escena
-    QGraphicsScene * escena = new QGraphicsScene();
+    static QGraphicsScene * escena = new QGraphicsScene();
 
     //crear View
     QGraphicsView * view = new QGraphicsView(escena);
