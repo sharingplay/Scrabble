@@ -28,5 +28,7 @@
         <file>Z.png</file>
         <file>J.png</file>
         <file>K.png</file>
+        <file>menu.png</file>
+        <file>madera.jpg</file>
     </qresource>
 </RCC>
