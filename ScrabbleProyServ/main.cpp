@@ -4,6 +4,10 @@
 #include <cstdlib>
 #include <cstring>
 #include <stdlib.h>
+#include <iostream>
+#include "nlohmann/json.hpp"
+
+using namespace std;
 
 int main(void) {
 
@@ -73,11 +77,32 @@ int main(void) {
     //uint32_t  tamPaquete;
     //recv(cliente, &tamPaquete, 4, 0);
 
-    char *buffer = (char *)malloc(1000);
+    //Para crear el json
+    using json = nlohmann::json;
+
+    //Para enviar y recibir tipo json
+    json *buffer = (json*)malloc(1000);
 
     while (1){
 
-        int bytesRecibidos = recv(cliente, buffer, 1000, 0);
+        int bytesRecibidos = recv(cliente, buffer, sizeof(&buffer), 0);
+        if (bytesRecibidos<=0){
+            perror("El cliente se desconecto");
+            return 1;
+        }
+
+        buffer[bytesRecibidos] = '\0';
+        cout << buffer << '\n';
+        printf("Me llegaron %d bytes con %s\n", bytesRecibidos, buffer);
+    }
+
+
+    //Para solo recibir char con char
+    /*char *buffer = (char *)malloc(1000);
+
+    while (1){
+
+        int bytesRecibidos = recv(cliente, buffer, sizeof(&buffer), 0);
         if (bytesRecibidos<=0){
             perror("El cliente se desconecto");
             return 1;
@@ -85,7 +110,7 @@ int main(void) {
 
         buffer[bytesRecibidos] = '\0';
         printf("Me llegaron %d bytes con %s\n", bytesRecibidos, buffer);
-    }
+    }*/
 
 
     return 0;
