@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "ui_mainwindow.h"
 #include <QGraphicsScene>
 #include <QGraphicsRectItem>
 #include <QGraphicsView>
@@ -12,6 +11,8 @@
 #include "lista.h"
 #include "bolsa.h"
 #include "jugador.h"
+#include "QString"
+
 
 namespace Ui {
 class MainWindow;
@@ -26,7 +27,8 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_3_clicked();
+
+    void on_pushButtonJugar_clicked();
 
 private:
     Ui::MainWindow *ui;

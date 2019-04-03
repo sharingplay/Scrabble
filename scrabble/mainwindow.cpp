@@ -1,4 +1,6 @@
 #include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "QMessageBox"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -12,17 +14,31 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_pushButtonJugar_clicked()
 {
 
+
+
     jugador *jugador1 = new jugador();
-    //setear nombre del jugador (FALTA)............................
+    QString nombre = ui->lineEdit_nombreJugador->text();
+    jugador1->setNombre(nombre.toStdString());
+    jugador1->setPuntaje(10);
+    QString datos = "Nombre:" + nombre + "\nPuntaje:           " + QString::number(jugador1->getPuntaje());
+
+
+    //Mostrar Datos de los jugadores
+    QGraphicsTextItem *datosJugador1 = new QGraphicsTextItem;
+    datosJugador1->setScale(2);
+    datosJugador1->setPos(800,50);
+    datosJugador1->setPlainText(datos);
+
+
 
     //crea bolsa y reparte fichas al jugador
     bolsa *bolsaA = new bolsa();
     bolsaA->crear();
     bolsaA->repartir(7,jugador1);
-    std::cout<<jugador1->getcantFichas()<<endl;
+
     //crear escena
     static QGraphicsScene * escena = new QGraphicsScene();
 
@@ -40,7 +56,6 @@ void MainWindow::on_pushButton_3_clicked()
     ficha * fichaC2 = new ficha('C');
     tablero* tableroFondo = new tablero();
 
-
     fichaA->setFlag(QGraphicsItem:: ItemIsFocusable);
     fichaA->setFocus();
     fichaA->setX(50);
@@ -49,21 +64,15 @@ void MainWindow::on_pushButton_3_clicked()
     fichaC->setFocus();
     fichaC->setX(100);
     fichaC->setY(820);
-    fichaA2->setFlag(QGraphicsItem:: ItemIsFocusable);
-    fichaA2->setFocus();
-    fichaA2->setX(150);
-    fichaA2->setY(820);
-    fichaC2->setFlag(QGraphicsItem:: ItemIsFocusable);
-    fichaC2->setFocus();
-    fichaC2->setX(200);
+
     fichaC2->setY(820);
     tableroFondo->setX(0);
     tableroFondo->setY(0);
 
-
     escena->addItem(tableroFondo);
+    escena->addItem(datosJugador1);
+
     escena->addItem(fichaA);
-    escena->addItem(fichaA2);
     escena->addItem(fichaC);
-    escena->addItem(fichaC2);
+
 }
