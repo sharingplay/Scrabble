@@ -5,6 +5,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QMouseEvent>
 #include <QEvent>
+#include "palabra.h"
 
 
 class boton: public QObject, public QGraphicsPixmapItem

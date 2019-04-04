@@ -14,6 +14,9 @@ public:
     bool leerAbajo(nodo* final);
     bool leerDerecha(nodo* final);
     bool centro(lista* tablero);
+    void volverFicha(nodo* final);
+    void quitarAbajo(nodo* final);
+    void quitarDerecha(nodo* final);
 
 };
 

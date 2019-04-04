@@ -24,5 +24,6 @@ public:
     lista* getPosiciones();
     void Puntuacion();
     void adjacentes(lista* x);
+    void imprimir();
 };
 #endif // TABLERO_H

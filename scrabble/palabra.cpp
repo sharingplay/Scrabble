@@ -16,6 +16,9 @@ bool palabra::verificar(nodo* final,lista* tablero){
         leerAbajo(actual);
     }
     if(actual->getLeft()->getEstado()==true){
+        while (actual->getLeft()->getEstado()==true) {
+            actual= actual->getLeft();
+        }
         leerDerecha(actual);
     }
     if(actual->getDown()->getEstado()==true){
@@ -127,3 +130,51 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
         //agregar puntuacion al jugador
     }
 }
+void palabra::volverFicha(nodo *final){
+    nodo* actual= final;
+    if(actual->getUp()->getEstado()==true){
+        while (actual->getUp()->getEstado()==true) {
+            actual= actual->getUp();
+        }
+        quitarAbajo(actual);
+    }
+    if(actual->getLeft()->getEstado()==true){
+        while (actual->getLeft()->getEstado()==true) {
+            actual= actual->getLeft();
+        }
+        quitarDerecha(actual);
+    }
+    if(actual->getDown()->getEstado()==true){
+        quitarAbajo(actual);
+    }
+    if(actual->getRight()->getEstado()==true){
+        quitarDerecha(actual);
+    }
+
+}
+void palabra::quitarAbajo(nodo* final){
+    nodo* actual= final;
+    while (actual->getDown()->getEstado()==true) {
+        if(actual->getPuntosAsignados()==false){
+            actual->getValor()->setX(actual->getValor()->getInicialX());
+            actual->getValor()->setY(actual->getValor()->getInicialY());
+            actual= actual->getDown();
+            actual->setEstado(false);
+        }
+        actual=actual->getDown();
+    }
+}
+void palabra::quitarDerecha(nodo* final){
+    nodo* actual= final;
+    while (actual->getLeft()->getEstado()==true) {
+        if(actual->getPuntosAsignados()==false){
+            actual->getValor()->setX(actual->getValor()->getInicialX());
+            actual->getValor()->setY(actual->getValor()->getInicialY());
+            actual= actual->getLeft();
+            actual->setEstado(false);
+        }
+        actual=actual->getLeft();
+    }
+}
+
+

@@ -29,6 +29,8 @@ void bolsa::repartir(int cantidad, jugador* jugador){
     while(temp!= nullptr){
         temp->getValor()->setX(x);
         temp->getValor()->setY(y);
+        temp->getValor()->setInicialX(x);
+        temp->getValor()->setInicialY(y);
         temp->getValor()->dibujar(temp->getValor());
         temp= temp->getSiguiente();
 
@@ -62,7 +64,6 @@ void bolsa::crear(){
     int i=0;
     while (i<100){
         bool exists= find(std::begin(posicion),std::end(posicion),v1)!=std::end(posicion);
-        cout<<v1<<endl;
         if (exists){
             v1 = rand() % 100;
         }else{
@@ -77,21 +78,3 @@ void bolsa::crear(){
     }
 
 }
-/*
-bool bolsa::verificar(int num, int numeros[]){
-    int i=0;
-
-    if(numeros.includes(num)){
-
-    }
-    while(numeros[i]!=0 or i<100){
-        int j=numeros[i];
-        if(num!=numeros[i]){
-            i++;
-        }else{
-            return true;
-        }
-    }
-    return false;
-}
-*/

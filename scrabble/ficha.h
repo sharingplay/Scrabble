@@ -13,6 +13,7 @@ class ficha: public QObject, public QGraphicsPixmapItem
 private:
     char letra;
     int valor;
+    int inicialX, inicialY;
 public:
     ficha(QGraphicsItem * parent = nullptr);
     ficha (char letra);
@@ -21,6 +22,10 @@ public:
     char getLetra();
     int getValor();
     void dibujar(ficha* letra);
+    int getInicialX();
+    void setInicialX(int inicial);
+    int getInicialY();
+    void setInicialY(int inicial);
 protected:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);

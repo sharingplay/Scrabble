@@ -131,6 +131,19 @@ ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
         return this->valor;
     }
 
+    int ficha::getInicialX(){
+        return this->inicialX;
+    }
+    void ficha::setInicialX(int inicial){
+        this->inicialX = inicial;
+    }
+    int ficha::getInicialY(){
+        return this->inicialY;
+    }
+    void ficha::setInicialY(int inicial){
+        this->inicialY = inicial;
+    }
+
     void ficha:: mouseMoveEvent(QGraphicsSceneMouseEvent *event){
         this->setX(event->scenePos().x());
         this->setY(event->scenePos().y());
@@ -138,7 +151,12 @@ ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     void ficha::mousePressEvent(QGraphicsSceneMouseEvent *event){
 
     }
+
     void ficha::mouseReleaseEvent(QGraphicsSceneMouseEvent *event){
+        int mouseX = event->scenePos().x();
+        int mouseY = event->scenePos().y();
+        cout<<mouseX<<","<<mouseY<<endl;
+        tablero::getInstance().acomodar(mouseX,mouseY,this);
 
     }
     void ficha::dibujar(ficha* letra){

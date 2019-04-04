@@ -7,9 +7,10 @@ tablero::tablero(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     generar();
 
 }
+
 void tablero::generar(){
     int x=0;
-    int y=0;
+    int y=70;
     for (int i=0;i!=15;i++) {
         for (int j=0;j!=15;j++) {
             nodo *celda = new nodo();
@@ -35,35 +36,41 @@ nodo* tablero::acomodar(int x, int y, ficha* ficha){
     nodo* actual= posiciones->Head;
     nodo* anterior= posiciones->Head;
     int i=0;
-    while(x<=actual->getX() or i<14 ){
+    while(x>=actual->getX() and i<14 ){
         anterior=actual;
         actual= actual->getSiguiente();
         i++;
     }
-    if(i>14){
-        //fuera del rango
+    if(x>765){
+        ficha->setX(ficha->getInicialX());
+        ficha->setY(ficha->getInicialY());
+    }
+
+    else if(y>800){
+        ficha->setX(ficha->getInicialX());
+        ficha->setY(ficha->getInicialY());
     }
     else{
         actual=anterior;
-        i=0;
-        while(y<actual->gety()){
+        while(y>actual->gety()-30 ){
+            std::cout<<actual->gety()<<endl;
             anterior=actual;
-            while(i<14){
-                actual=actual->getSiguiente();
-                i++;
-            }
-            i=0;
+            actual=actual->getDown();
         }
-        if(anterior->getEstado()==false){
-            //graficar anterior->getX() y Y
+        std::cout<<"estado"<<anterior->getEstado()<<"pts"<<anterior->getPuntosAsignados()<<endl;
+        if(anterior->getPuntosAsignados()==false){
             anterior->setValor(ficha);
+            anterior->getValor()->setX(anterior->getX());
+            anterior->getValor()->setY(anterior->gety()-30);
             anterior->setEstado(true);
             return anterior;
         }else{
-            //ocupada
+            ficha->setX(ficha->getInicialX());
+            ficha->setY(ficha->getInicialY());
         }
     }
 }
+
 lista* tablero::getPosiciones(){
     return this->posiciones;
 }
@@ -94,5 +101,7 @@ void tablero::Puntuacion(){
         }
     }
 }
+
+
 
 
