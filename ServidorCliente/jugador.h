@@ -9,8 +9,8 @@
 #include <iostream>
 #include "string"
 #include "nlohmann/json.hpp"
-#include "Cliente.h"
-#include "Cliente.cpp"
+#include "Cliente/Cliente.h"
+#include "Cliente/Cliente.cpp"
 using json = nlohmann::json;
 using string = std::string;
 

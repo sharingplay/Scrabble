@@ -124,7 +124,7 @@ int Servidor::runServer(){
         else{
             close(sock);
             sleep(1);
-            enviarJson(message);
+            //enviarJson(message);
         }
     }
 }

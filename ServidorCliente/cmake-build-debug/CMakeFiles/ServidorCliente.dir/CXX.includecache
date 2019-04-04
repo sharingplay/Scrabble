@@ -6,16 +6,16 @@
 
 #IncludeRegexTransform: 
 
-/home/edgargonza/Desktop/ServidorCliente/Cliente.cpp
+/home/edgargonza/Desktop/ServidorCliente/Cliente/Cliente.cpp
 Cliente.h
-/home/edgargonza/Desktop/ServidorCliente/Cliente.h
+/home/edgargonza/Desktop/ServidorCliente/Cliente/Cliente.h
 iostream
 -
 string
-/home/edgargonza/Desktop/ServidorCliente/string
+/home/edgargonza/Desktop/ServidorCliente/Cliente/string
 
-/home/edgargonza/Desktop/ServidorCliente/Cliente.h
-nlohmann/json.hpp
+/home/edgargonza/Desktop/ServidorCliente/Cliente/Cliente.h
+../nlohmann/json.hpp
 /home/edgargonza/Desktop/ServidorCliente/nlohmann/json.hpp
 stdlib.h
 -
@@ -30,7 +30,7 @@ unistd.h
 stdio.h
 -
 string
-/home/edgargonza/Desktop/ServidorCliente/string
+/home/edgargonza/Desktop/ServidorCliente/Cliente/string
 
 /home/edgargonza/Desktop/ServidorCliente/Servidor.cpp
 Servidor.h
@@ -69,10 +69,10 @@ Servidor.h
 /home/edgargonza/Desktop/ServidorCliente/Servidor.h
 Servidor.cpp
 /home/edgargonza/Desktop/ServidorCliente/Servidor.cpp
-Cliente.h
-/home/edgargonza/Desktop/ServidorCliente/Cliente.h
-Cliente.cpp
-/home/edgargonza/Desktop/ServidorCliente/Cliente.cpp
+Cliente/Cliente.h
+/home/edgargonza/Desktop/ServidorCliente/Cliente/Cliente.h
+Cliente/Cliente.cpp
+/home/edgargonza/Desktop/ServidorCliente/Cliente/Cliente.cpp
 
 /home/edgargonza/Desktop/ServidorCliente/nlohmann/json.hpp
 algorithm
