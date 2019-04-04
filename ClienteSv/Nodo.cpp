@@ -4,8 +4,11 @@
 
 #include "Nodo.h"
 
-Nodo::Nodo() {}
+Nodo::Nodo(int n) {
+    number=n;
+    std::cout<<n<<'\n';
+}
 
-int Nodo::setSiguiente() {
-    return 0;
+int Nodo::n() {
+    return number;
 }

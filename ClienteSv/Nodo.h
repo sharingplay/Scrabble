@@ -7,10 +7,11 @@
 
 
 class Nodo {
+private:
+    int number;
 public:
-    Nodo* sig;
-    Nodo();
-    int setSiguiente();
+    Nodo(int n);
+    int n();
 };
 
 

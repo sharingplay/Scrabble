@@ -14,58 +14,30 @@ using namespace std;
 using string = std::string;
 
 int main() {
-    //Cliente c1(8080);
-    //Cliente c2(8080);
-    //Cliente c3(8080);
+    Cliente c1(8080);
+    Cliente c2(8080);
+    Cliente c3(8080);
 
     int matriz[4][4] = {{3,4,5,5},{0,4,2,3},{9,5,2,6}};
+    Nodo l(90);
 
     json js={
             {"Jugador","Edgar"},
-            {"Puntos", 89},
+            {"Puntos", {89,"Ed","pts",34}},
+            {"Nodo", l.n()},
             {"Matriz", matriz}
-
     };
-//+"as\"" /
-    char t1[]=R"({)";
-    cout<<t1<<endl;
 
-    for (json::iterator it = js.begin(); it != js.end(); it++){
+    string s = js.dump();
 
-        strcat(t1,"\"");
-        //v = js[it.key()];
-        strcat(t1,"Clave");
-        strcat(t1,"\"");
-        strcat(t1,":");
-        strcat(t1,"valor,");
-        cout<<t1<<endl;
-
-        //cout<< it.key() << " : " << it.value()<< "\n";
-    }
-
-    strcat(t1,"}");
-    cout<<t1<<endl;
-
-    /*char text[]= R"(
-            {
-            "Jugador": "Edgar",
-            "Puntos": 8,
-            "Matriz": [7868,867,[867,8,67]]
-            }
-    )";
-
-    json jsonT = {};
-
-    cout<<jsonT<<endl;
-    jsonT.emplace("Jugador","Ed");
-    cout<<jsonT<<endl;
-
-    json jsonParseado = json::parse(text);
+    json jsonParseado = json::parse(s);
 
     cout<<setw(4)<<jsonParseado<<"\n\n";
-    */
-    //c1.sendJson(text);
-    //c2.sendJson("Foca");
+
+    cout<<s<<endl;
+
+    c1.sendJson(s);
+    c2.sendJson("Foca");
 
     return 0;
 }
