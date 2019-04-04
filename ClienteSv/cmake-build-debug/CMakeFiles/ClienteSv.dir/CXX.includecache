@@ -32,6 +32,12 @@ string
 nlohmann/json.hpp
 /home/edgargonza/Desktop/ClienteSv/nlohmann/json.hpp
 
+/home/edgargonza/Desktop/ClienteSv/Nodo.cpp
+Nodo.h
+/home/edgargonza/Desktop/ClienteSv/Nodo.h
+
+/home/edgargonza/Desktop/ClienteSv/Nodo.h
+
 /home/edgargonza/Desktop/ClienteSv/main.cpp
 iostream
 -
@@ -39,6 +45,18 @@ Cliente.h
 /home/edgargonza/Desktop/ClienteSv/Cliente.h
 Cliente.cpp
 /home/edgargonza/Desktop/ClienteSv/Cliente.cpp
+stdio.h
+-
+string
+/home/edgargonza/Desktop/ClienteSv/string
+Nodo.h
+/home/edgargonza/Desktop/ClienteSv/Nodo.h
+Nodo.cpp
+/home/edgargonza/Desktop/ClienteSv/Nodo.cpp
+string.h
+-
+nlohmann/json.hpp
+/home/edgargonza/Desktop/ClienteSv/nlohmann/json.hpp
 
 /home/edgargonza/Desktop/ClienteSv/nlohmann/json.hpp
 algorithm
