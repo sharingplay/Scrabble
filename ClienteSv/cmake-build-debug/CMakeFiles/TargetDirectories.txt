@@ -1,0 +1,3 @@
+/home/edgargonza/Desktop/ClienteSv/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/edgargonza/Desktop/ClienteSv/cmake-build-debug/CMakeFiles/ClienteSv.dir
+/home/edgargonza/Desktop/ClienteSv/cmake-build-debug/CMakeFiles/edit_cache.dir

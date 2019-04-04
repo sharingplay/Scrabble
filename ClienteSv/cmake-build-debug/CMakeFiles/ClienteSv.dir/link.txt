@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ClienteSv.dir/main.cpp.o  -o ClienteSv 
