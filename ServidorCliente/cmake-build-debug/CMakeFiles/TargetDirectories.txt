@@ -1,0 +1,3 @@
+/home/edgargonza/Desktop/ServidorCliente/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/edgargonza/Desktop/ServidorCliente/cmake-build-debug/CMakeFiles/ServidorCliente.dir
+/home/edgargonza/Desktop/ServidorCliente/cmake-build-debug/CMakeFiles/edit_cache.dir
