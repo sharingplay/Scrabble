@@ -4,8 +4,13 @@ bolsa::bolsa()
 {
 
 }
-
-nodo* bolsa::repartir(int cantidad, jugador* jugador){
+//!
+//! \brief bolsa::repartir reparte fichas a los jugadores
+//! \param cantidad, cantidad de fichas que se quieren repartir
+//! \param jugador, jugador al que se le reparten las fichas
+//! \return
+//!
+void bolsa::repartir(int cantidad, jugador* jugador){
     while(cantidad>0){
         if(this->listaFichas->Head != nullptr){
               nodo* toReturn = listaFichas->Head;
@@ -16,7 +21,24 @@ nodo* bolsa::repartir(int cantidad, jugador* jugador){
             }
         cantidadFichas-=1;
         cantidad-=1;
+    }
 
+    nodo* temp = jugador->getlista()->Head;
+    int x = 100;
+    int y = 820;
+    while(temp!= nullptr){
+        temp->getValor()->setX(x);
+        temp->getValor()->setY(y);
+        temp->getValor()->dibujar(temp->getValor());
+        temp= temp->getSiguiente();
+
+        x += 50;
+    }
+    nodo* aux = jugador->getlista()->Head;
+    while(aux !=nullptr){
+        ficha* letra = aux->getValor();
+        aux->getValor()->dibujar(letra);
+        aux = aux->getSiguiente();
     }
 }
 
@@ -39,7 +61,8 @@ void bolsa::crear(){
     int v1 = rand() % 100; //0 a 99
     int i=0;
     while (i<100){
-        bool exists=std::find(std::begin(posicion),std::end(posicion),v1)!=std::end(posicion);
+        bool exists= find(std::begin(posicion),std::end(posicion),v1)!=std::end(posicion);
+        cout<<v1<<endl;
         if (exists){
             v1 = rand() % 100;
         }else{

@@ -12,8 +12,7 @@
 #include "bolsa.h"
 #include "jugador.h"
 #include "QString"
-
-
+#include "boton.h"
 namespace Ui {
 class MainWindow;
 }
@@ -23,7 +22,12 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    static MainWindow& getInstance(){
+        static MainWindow instance;
+        return instance;
+    }
     explicit MainWindow(QWidget *parent = nullptr);
+    static QGraphicsScene* escena;
     ~MainWindow();
 
 private slots:

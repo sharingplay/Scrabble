@@ -31,5 +31,8 @@
         <file>madera.jpg</file>
         <file>../../../../Downloads/menu.jpg</file>
         <file>menu.jpg</file>
+        <file>../../../../Pictures/scrabble.png</file>
+        <file>../../../../Pictures/scrabble.jpeg</file>
+        <file>scrabble.png</file>
     </qresource>
 </RCC>

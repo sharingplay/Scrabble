@@ -20,6 +20,7 @@ public:
     void setValor(int valor);
     char getLetra();
     int getValor();
+    void dibujar(ficha* letra);
 protected:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);

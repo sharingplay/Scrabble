@@ -6,10 +6,10 @@ void jugador::setTurno(bool turno){
 bool jugador::getTurno(){
     return this->turno;
 }
-void  jugador::setNombre(string nombre){
+void  jugador::setNombre(QString nombre){
     this->nombre = nombre;
 }
-string jugador::getNombre(){
+QString jugador::getNombre(){
     return this->nombre;
 }
 void jugador::setPuntaje(int puntaje){
@@ -38,3 +38,10 @@ lista* jugador::getlista(){
     this->setPuntaje(0);
     this->setcantFichas(0);
 }
+
+//    void jugador::keyPressEvent(QKeyEvent *tecla){
+//        if (tecla->key() == Qt::Key_Space){
+//            this->setPuntaje(this->getPuntaje()+5);
+//            cout<<this->getPuntaje()<<endl;
+//        }
+//    }

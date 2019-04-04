@@ -34,7 +34,8 @@ SOURCES += \
     bolsa.cpp \
     palabra.cpp \
     adjacent.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    boton.cpp
 
 HEADERS += \
     ficha.h \
@@ -45,7 +46,9 @@ HEADERS += \
     bolsa.h \
     palabra.h \
     adjacent.h \
-    mainwindow.h
+    mainwindow.h \
+    ../../../Downloads/Scrabble-server/ServidorCliente/nlohmann/json.hpp \
+    boton.h
 
 FORMS += \
         mainwindow.ui \

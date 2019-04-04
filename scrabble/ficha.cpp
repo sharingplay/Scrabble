@@ -1,5 +1,6 @@
 #include "ficha.h"
 #include "QGraphicsScene"
+#include "mainwindow.h"
 
 ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 }
@@ -110,7 +111,7 @@ ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
             setLetra('Z');
             setValor(10);
             break;
-        case ' ': setPixmap(QPixmap(":/imagenes/blanca.png"));
+        case 'c': setPixmap(QPixmap(":/imagenes/blanca.png"));
             setLetra(' ');
             setValor(0);
             break;
@@ -140,3 +141,9 @@ ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     void ficha::mouseReleaseEvent(QGraphicsSceneMouseEvent *event){
 
     }
+    void ficha::dibujar(ficha* letra){
+        letra->setFlag(QGraphicsItem::ItemIsFocusable);
+        letra->setFocus();
+        MainWindow::escena->addItem(letra);
+    }
+

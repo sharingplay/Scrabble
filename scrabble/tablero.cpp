@@ -1,9 +1,11 @@
 #include "tablero.h"
 #include "QGraphicsScene"
 
+
 tablero::tablero(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     setPixmap(QPixmap(":/imagenes/tablero.jpg"));
     generar();
+
 }
 void tablero::generar(){
     int x=0;
@@ -92,3 +94,5 @@ void tablero::Puntuacion(){
         }
     }
 }
+
+

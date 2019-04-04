@@ -5,11 +5,11 @@
 #include <iostream>
 #include <QGraphicsPixmapItem>
 #include "adjacent.h"
+#include "jugador.h"
 
 class tablero: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
-
 public:
 
     static tablero& getInstance(){

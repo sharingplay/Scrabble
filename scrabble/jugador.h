@@ -4,12 +4,15 @@
 #include "lista.h"
 #include "ficha.h"
 #include "nodo.h"
+#include "QKeyEvent"
 using namespace std;
 
 class jugador
 {
+//protected:
+//    void keyPressEvent(QKeyEvent *tecla);
 private:
-    string nombre;
+    QString nombre;
     int puntaje;
     int cantFichas;
     bool turno;
@@ -17,11 +20,11 @@ private:
 
 public:
     jugador();
-    void setNombre(string nombre);
+    void setNombre(QString nombre);
     void setPuntaje(int puntaje);
     void setcantFichas(int cantFichas);
     void setTurno(bool turno);
-    string getNombre();
+    QString getNombre();
     int getPuntaje();
     int getcantFichas();
     bool getTurno();
