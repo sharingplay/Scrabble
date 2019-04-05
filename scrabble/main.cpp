@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include "cliente.h"
+#include "cliente.cpp"
 
 int main(int argc, char *argv[])
 {
@@ -7,6 +9,9 @@ int main(int argc, char *argv[])
 
     MainWindow ventanaMenu;
     ventanaMenu.show();
+
+    cliente c1(8080);
+    c1.sendJson("hodsksdj");
 
     return a.exec();
 }

@@ -10,7 +10,7 @@ tablero::tablero(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 void tablero::generar(){
     int x=0;
-    int y=70;
+    int y=10;
     for (int i=0;i!=15;i++) {
         for (int j=0;j!=15;j++) {
             nodo *celda = new nodo();
@@ -21,7 +21,7 @@ void tablero::generar(){
             x+=51;
         }
         x=0;
-        y+=51;
+        y+=60;
     }
     adjacentes(this->posiciones);
     Puntuacion();
@@ -52,16 +52,14 @@ nodo* tablero::acomodar(int x, int y, ficha* ficha){
     }
     else{
         actual=anterior;
-        while(y>actual->gety()-30 ){
-            std::cout<<actual->gety()<<endl;
+        while(y>actual->gety()){
             anterior=actual;
             actual=actual->getDown();
         }
-        std::cout<<"estado"<<anterior->getEstado()<<"pts"<<anterior->getPuntosAsignados()<<endl;
         if(anterior->getPuntosAsignados()==false){
             anterior->setValor(ficha);
             anterior->getValor()->setX(anterior->getX());
-            anterior->getValor()->setY(anterior->gety()-30);
+            anterior->getValor()->setY(anterior->gety());
             anterior->setEstado(true);
             return anterior;
         }else{
