@@ -9,7 +9,7 @@ tablero::tablero(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 }
 
 void tablero::generar(){
-    int x=0;
+    int x=7;
     int y=10;
     for (int i=0;i!=15;i++) {
         for (int j=0;j!=15;j++) {
@@ -18,11 +18,13 @@ void tablero::generar(){
             celda->setY(y);
             celda->setEstado(false);
             posiciones->insertarFinal(celda);
-            x+=51;
+            x+=50;
         }
-        x=0;
-        y+=60;
+        x=7;
+        y+=54;
     }
+    imprimirLetra();
+    //imprimirPosiciones();
     adjacentes(this->posiciones);
     Puntuacion();
 }
@@ -36,27 +38,32 @@ nodo* tablero::acomodar(int x, int y, ficha* ficha){
     nodo* actual= posiciones->Head;
     nodo* anterior= posiciones->Head;
     int i=0;
-    while(x>=actual->getX() and i<14 ){
+    int x1=actual->getX();
+    int y1=actual->gety();
+    while(x>=actual->getX() and i<15 ){
+        x1=actual->getX();
+        std::cout<<x<<";"<<actual->getX();
         anterior=actual;
         actual= actual->getSiguiente();
         i++;
     }
-    if(x>765){
+    if(x>760){
         ficha->setX(ficha->getInicialX());
         ficha->setY(ficha->getInicialY());
     }
 
-    else if(y>800){
+    else if(y>810){
         ficha->setX(ficha->getInicialX());
         ficha->setY(ficha->getInicialY());
     }
     else{
         actual=anterior;
-        while(y>actual->gety()){
+        while(actual!=nullptr && y>actual->gety()){
+            y1=actual->gety();
             anterior=actual;
             actual=actual->getDown();
         }
-        if(anterior->getPuntosAsignados()==false){
+        if(anterior->getPuntosAsignados()==false and anterior->getEstado()==false ){
             anterior->setValor(ficha);
             anterior->getValor()->setX(anterior->getX());
             anterior->getValor()->setY(anterior->gety());
@@ -99,7 +106,33 @@ void tablero::Puntuacion(){
         }
     }
 }
-
+void tablero::imprimirPosiciones(){
+    nodo* actual= this->getPosiciones()->Head;
+    std::cout<<"[";
+    for (int i=0;i!=15;i++) {
+        for (int j=0;j!=15;j++) {
+            std::cout<<"x:"<<actual->getX()<<"y:"<<actual->gety()<<";";
+            actual=actual->getSiguiente();
+        }
+        std::cout<<"]"<<endl;
+    }
+}
+void tablero::imprimirLetra(){
+    nodo* actual= this->getPosiciones()->Head;
+    std::cout<<"[";
+    for (int i=0;i!=15;i++) {
+        for (int j=0;j!=15;j++) {
+            if(actual->getValor()==nullptr){
+                std::cout<<' '<<";";
+                actual=actual->getSiguiente();
+            }else {
+                std::cout<<actual->getValor()->getLetra()<<";";
+                actual=actual->getSiguiente();
+            }
+        }
+        std::cout<<"]"<<endl;
+    }
+}
 
 
 

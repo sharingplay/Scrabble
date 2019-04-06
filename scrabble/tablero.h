@@ -25,5 +25,7 @@ public:
     void Puntuacion();
     void adjacentes(lista* x);
     void imprimir();
+    void imprimirPosiciones();
+    void imprimirLetra();
 };
 #endif // TABLERO_H

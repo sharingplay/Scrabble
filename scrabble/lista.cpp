@@ -46,7 +46,8 @@ nodo* lista::getNode(int x, int y){
         nodo *current=Head;
         while (current !=nullptr){
             if (current->getX()==x && current->gety()==y){
-                return current;}
+                return current;
+            }
             else{
                 current= current->getSiguiente();
                 }

@@ -157,6 +157,7 @@ ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
         int mouseY = event->scenePos().y();
         cout<<mouseX<<","<<mouseY<<endl;
         tablero::getInstance().acomodar(mouseX,mouseY,this);
+        tablero::getInstance().imprimirLetra();
 
     }
     void ficha::dibujar(ficha* letra){
