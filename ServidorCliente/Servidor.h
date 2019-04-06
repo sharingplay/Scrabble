@@ -11,6 +11,12 @@
 #include<unistd.h>
 #include "string"
 #include "nlohmann/json.hpp"
+#include "LibreriaCodes.h"
+#include "LibreriaCodes.cpp"
+#include "modificadorJson.h"
+#include "modificadorJson.cpp"
+#include "agregarJugador.h"
+#include "agregarJugador.cpp"
 
 using string = std::string;
 
@@ -29,6 +35,8 @@ public:
     void enviarJson(string msg);
 
 private:
+    LibreriaCodes lib();
+    modificadorJson modJS();
     int memSize;
     int port;
     void* init_ptr;

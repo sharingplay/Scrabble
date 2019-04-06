@@ -3,7 +3,6 @@
 //
 
 #include "Servidor.h"
-
 #include <stdlib.h>
 #include <iostream>
 #include "Servidor.h"
@@ -82,6 +81,7 @@ int Servidor::runServer(){
 
         printf("Port is: %i\n",port);
         printf("Waiting for incoming connections...\n");
+
         clientLen = sizeof(struct sockaddr_in);
 
         //accept connection from an incoming client
@@ -105,9 +105,19 @@ int Servidor::runServer(){
             break;
         }
 
-        printf("Client reply : %s\n",client_message);
+        printf("Cliente %i\n me envio: %s\n", sock,client_message);
 
         string str(client_message);
+
+        json js = modJS().stringAJson(client_message);
+
+        string inicio = modJS().obtenerKey(js,"iniciarSesion");
+        string nombre = modJS().obtenerKey(js,"jugador");
+        string codigo = modJS().obtenerKey(js, "code");
+
+        if (inicio=="iniciado"){
+            lib().Agregar(codigo, nombre);
+        }
 
         //para envairle al cliente
         //send(sock , message , strlen(message) , 0)
@@ -122,7 +132,7 @@ int Servidor::runServer(){
             printf("Error");
         }
         else{
-            close(sock);
+            //close(sock);
             sleep(1);
             //enviarJson(message);
         }

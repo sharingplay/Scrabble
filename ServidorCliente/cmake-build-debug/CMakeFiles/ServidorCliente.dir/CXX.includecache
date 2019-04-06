@@ -6,31 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/edgargonza/Desktop/ServidorCliente/Cliente/Cliente.cpp
-Cliente.h
-/home/edgargonza/Desktop/ServidorCliente/Cliente/Cliente.h
+/home/edgargonza/Desktop/ServidorCliente/LibreriaCodes.cpp
+LibreriaCodes.h
+/home/edgargonza/Desktop/ServidorCliente/LibreriaCodes.h
 iostream
 -
 string
-/home/edgargonza/Desktop/ServidorCliente/Cliente/string
+/home/edgargonza/Desktop/ServidorCliente/string
 
-/home/edgargonza/Desktop/ServidorCliente/Cliente/Cliente.h
-../nlohmann/json.hpp
-/home/edgargonza/Desktop/ServidorCliente/nlohmann/json.hpp
-stdlib.h
--
-string.h
--
-sys/socket.h
--
-arpa/inet.h
--
-unistd.h
--
-stdio.h
--
+/home/edgargonza/Desktop/ServidorCliente/LibreriaCodes.h
 string
-/home/edgargonza/Desktop/ServidorCliente/Cliente/string
+-
+iostream
+-
 
 /home/edgargonza/Desktop/ServidorCliente/Servidor.cpp
 Servidor.h
@@ -59,6 +47,30 @@ unistd.h
 -
 string
 /home/edgargonza/Desktop/ServidorCliente/string
+nlohmann/json.hpp
+/home/edgargonza/Desktop/ServidorCliente/nlohmann/json.hpp
+LibreriaCodes.h
+/home/edgargonza/Desktop/ServidorCliente/LibreriaCodes.h
+LibreriaCodes.cpp
+/home/edgargonza/Desktop/ServidorCliente/LibreriaCodes.cpp
+modificadorJson.h
+/home/edgargonza/Desktop/ServidorCliente/modificadorJson.h
+modificadorJson.cpp
+/home/edgargonza/Desktop/ServidorCliente/modificadorJson.cpp
+agregarJugador.h
+/home/edgargonza/Desktop/ServidorCliente/agregarJugador.h
+agregarJugador.cpp
+/home/edgargonza/Desktop/ServidorCliente/agregarJugador.cpp
+
+/home/edgargonza/Desktop/ServidorCliente/agregarJugador.cpp
+agregarJugador.h
+/home/edgargonza/Desktop/ServidorCliente/agregarJugador.h
+
+/home/edgargonza/Desktop/ServidorCliente/agregarJugador.h
+LibreriaCodes.h
+/home/edgargonza/Desktop/ServidorCliente/LibreriaCodes.h
+LibreriaCodes.cpp
+/home/edgargonza/Desktop/ServidorCliente/LibreriaCodes.cpp
 nlohmann/json.hpp
 /home/edgargonza/Desktop/ServidorCliente/nlohmann/json.hpp
 
@@ -69,10 +81,18 @@ Servidor.h
 /home/edgargonza/Desktop/ServidorCliente/Servidor.h
 Servidor.cpp
 /home/edgargonza/Desktop/ServidorCliente/Servidor.cpp
-Cliente/Cliente.h
-/home/edgargonza/Desktop/ServidorCliente/Cliente/Cliente.h
-Cliente/Cliente.cpp
-/home/edgargonza/Desktop/ServidorCliente/Cliente/Cliente.cpp
+
+/home/edgargonza/Desktop/ServidorCliente/modificadorJson.cpp
+modificadorJson.h
+/home/edgargonza/Desktop/ServidorCliente/modificadorJson.h
+
+/home/edgargonza/Desktop/ServidorCliente/modificadorJson.h
+string
+-
+iostream
+-
+nlohmann/json.hpp
+/home/edgargonza/Desktop/ServidorCliente/nlohmann/json.hpp
 
 /home/edgargonza/Desktop/ServidorCliente/nlohmann/json.hpp
 algorithm
