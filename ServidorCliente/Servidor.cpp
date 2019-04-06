@@ -5,7 +5,6 @@
 #include "Servidor.h"
 #include <stdlib.h>
 #include <iostream>
-#include "Servidor.h"
 #include "string"
 #include "nlohmann/json.hpp"
 using json = nlohmann::json;
@@ -28,6 +27,10 @@ short Servidor::SocketCreate(){
     printf("Create the socket\n");
 
     hSocket = socket(AF_INET, SOCK_STREAM, 0);
+
+    //se reutiliza el puerto del socket
+    int activity = 1;
+    setsockopt(hSocket, SOL_SOCKET, SO_REUSEADDR, &activity, sizeof(activity));
     return hSocket;
 }
 
@@ -109,15 +112,19 @@ int Servidor::runServer(){
 
         string str(client_message);
 
-        json js = modJS().stringAJson(client_message);
+        json js = modJS->stringAJson(client_message);
 
-        string inicio = modJS().obtenerKey(js,"iniciarSesion");
-        string nombre = modJS().obtenerKey(js,"jugador");
-        string codigo = modJS().obtenerKey(js, "code");
-
+        string inicio = modJS->obtenerKey(js,"iniciarSesion");
+        string nombre = modJS->obtenerKey(js,"Jugador");
+        string codigo = modJS->obtenerKey(js,"codigo");
+        cout<<inicio<<endl;
         if (inicio=="iniciado"){
-            lib().Agregar(codigo, nombre);
+            cout<<lib<<endl;
+            cout<<"entro"<<endl;
+            lib->Agregar(codigo, nombre);
         }
+        cout<<"JO"<<endl;
+        cout<<lib<<endl;
 
         //para envairle al cliente
         //send(sock , message , strlen(message) , 0)

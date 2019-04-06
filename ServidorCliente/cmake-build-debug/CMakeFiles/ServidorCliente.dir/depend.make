@@ -5,8 +5,6 @@ CMakeFiles/ServidorCliente.dir/main.cpp.o: ../LibreriaCodes.cpp
 CMakeFiles/ServidorCliente.dir/main.cpp.o: ../LibreriaCodes.h
 CMakeFiles/ServidorCliente.dir/main.cpp.o: ../Servidor.cpp
 CMakeFiles/ServidorCliente.dir/main.cpp.o: ../Servidor.h
-CMakeFiles/ServidorCliente.dir/main.cpp.o: ../agregarJugador.cpp
-CMakeFiles/ServidorCliente.dir/main.cpp.o: ../agregarJugador.h
 CMakeFiles/ServidorCliente.dir/main.cpp.o: ../main.cpp
 CMakeFiles/ServidorCliente.dir/main.cpp.o: ../modificadorJson.cpp
 CMakeFiles/ServidorCliente.dir/main.cpp.o: ../modificadorJson.h

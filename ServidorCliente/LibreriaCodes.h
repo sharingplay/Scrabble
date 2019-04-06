@@ -15,9 +15,10 @@ class LibreriaCodes {
 
 private:
     string lib[5][5];
+    string code,nombre;
 public:
     LibreriaCodes();
-    string Agregar(string code, string nombre);
+    string Agregar(string _code, string _nombre);
 };
 
 

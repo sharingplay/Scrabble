@@ -27,8 +27,6 @@ stdlib.h
 -
 iostream
 -
-Servidor.h
-/home/edgargonza/Desktop/ServidorCliente/Servidor.h
 string
 /home/edgargonza/Desktop/ServidorCliente/string
 nlohmann/json.hpp
@@ -57,22 +55,6 @@ modificadorJson.h
 /home/edgargonza/Desktop/ServidorCliente/modificadorJson.h
 modificadorJson.cpp
 /home/edgargonza/Desktop/ServidorCliente/modificadorJson.cpp
-agregarJugador.h
-/home/edgargonza/Desktop/ServidorCliente/agregarJugador.h
-agregarJugador.cpp
-/home/edgargonza/Desktop/ServidorCliente/agregarJugador.cpp
-
-/home/edgargonza/Desktop/ServidorCliente/agregarJugador.cpp
-agregarJugador.h
-/home/edgargonza/Desktop/ServidorCliente/agregarJugador.h
-
-/home/edgargonza/Desktop/ServidorCliente/agregarJugador.h
-LibreriaCodes.h
-/home/edgargonza/Desktop/ServidorCliente/LibreriaCodes.h
-LibreriaCodes.cpp
-/home/edgargonza/Desktop/ServidorCliente/LibreriaCodes.cpp
-nlohmann/json.hpp
-/home/edgargonza/Desktop/ServidorCliente/nlohmann/json.hpp
 
 /home/edgargonza/Desktop/ServidorCliente/main.cpp
 iostream

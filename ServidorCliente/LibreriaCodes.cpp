@@ -6,9 +6,14 @@
 #include <iostream>
 #include "string"
 
-LibreriaCodes::LibreriaCodes() {}
+LibreriaCodes::LibreriaCodes() {
+    lib[5][5];
+}
 
-string LibreriaCodes::Agregar(string code, string nombre) {
+string LibreriaCodes::Agregar(string _code, string _nombre) {
+
+    code = _code;
+    nombre = _nombre;
 
     //Utiliza el array de Codes para buscar el codigo
     int i;

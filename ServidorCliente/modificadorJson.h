@@ -18,9 +18,9 @@ class modificadorJson {
 
 public:
     modificadorJson();
-    string jsonAString(json JS);
-    json stringAJson(string text);
-    string obtenerKey(json jsKey, string clave);
+    static string jsonAString(json JS);
+    static json stringAJson(string text);
+    static string obtenerKey(json jsKey, string clave);
 };
 
 
