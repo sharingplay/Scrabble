@@ -36,7 +36,8 @@ SOURCES += \
     adjacent.cpp \
     mainwindow.cpp \
     boton.cpp \
-    cliente.cpp
+    cliente.cpp \
+    ventanavalidar.cpp
 
 HEADERS += \
     ficha.h \
@@ -50,11 +51,13 @@ HEADERS += \
     mainwindow.h \
     ../../../Downloads/Scrabble-server/ServidorCliente/nlohmann/json.hpp \
     boton.h \
-    cliente.h
+    cliente.h \
+    ventanavalidar.h
 
 FORMS += \
         mainwindow.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    ventanavalidar.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

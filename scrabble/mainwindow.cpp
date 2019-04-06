@@ -62,3 +62,10 @@ void MainWindow::on_pushButtonJugar_clicked()
 
 
 }
+
+void MainWindow::on_botonUnirse_clicked()
+{
+    ventValidar = new ventanaValidar(this);
+    ventValidar->show();
+
+}

@@ -13,6 +13,8 @@
 #include "jugador.h"
 #include "QString"
 #include "boton.h"
+#include "ventanavalidar.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -34,8 +36,11 @@ private slots:
 
     void on_pushButtonJugar_clicked();
 
+    void on_botonUnirse_clicked();
+
 private:
     Ui::MainWindow *ui;
+    ventanaValidar *ventValidar;
 };
 
 #endif // MAINWINDOW_H
