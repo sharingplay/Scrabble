@@ -10,6 +10,8 @@
 class tablero: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
+private:
+    nodo* centro;
 public:
 
     static tablero& getInstance(){
@@ -18,6 +20,7 @@ public:
     }
 
     lista *posiciones = new lista();
+    jugador *listaJugadores[1];
     tablero(QGraphicsItem * parent = nullptr);
     void generar();
     nodo* acomodar(int x, int y,ficha* ficha);
@@ -27,5 +30,6 @@ public:
     void imprimir();
     void imprimirPosiciones();
     void imprimirLetra();
+    nodo* getcentro();
 };
 #endif // TABLERO_H

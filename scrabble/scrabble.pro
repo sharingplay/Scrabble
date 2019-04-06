@@ -37,7 +37,8 @@ SOURCES += \
     mainwindow.cpp \
     boton.cpp \
     cliente.cpp \
-    ventanavalidar.cpp
+    ventanavalidar.cpp \
+    lector.cpp
 
 HEADERS += \
     ficha.h \
@@ -52,7 +53,8 @@ HEADERS += \
     ../../../Downloads/Scrabble-server/ServidorCliente/nlohmann/json.hpp \
     boton.h \
     cliente.h \
-    ventanavalidar.h
+    ventanavalidar.h \
+    lector.h
 
 FORMS += \
         mainwindow.ui \

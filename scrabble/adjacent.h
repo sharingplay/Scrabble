@@ -1,6 +1,7 @@
 #ifndef ADJACENT_H
 #define ADJACENT_H
 #include "lista.h"
+
 class adjacent
 {
 public:

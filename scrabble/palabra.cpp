@@ -4,47 +4,30 @@ palabra::palabra()
 {
 }
 
-bool palabra::verificar(nodo* final,lista* tablero){
+bool palabra::verificar(nodo* final){
     nodo* actual= final;
-    if(!centro(tablero)){
-        //no hay ficha en el centro
+    if(!tablero::getInstance().getcentro()->getEstado()){
+        volverFicha(final);
     }
-    if(actual->getUp()->getEstado()==true){
+    else if(actual->getUp()->getEstado()==true){
         while (actual->getUp()->getEstado()==true) {
             actual= actual->getUp();
         }
         leerAbajo(actual);
     }
-    if(actual->getLeft()->getEstado()==true){
+    else if(actual->getLeft()->getEstado()==true){
         while (actual->getLeft()->getEstado()==true) {
             actual= actual->getLeft();
         }
         leerDerecha(actual);
     }
-    if(actual->getDown()->getEstado()==true){
+    else if(actual->getDown()->getEstado()==true){
         leerAbajo(actual);
     }
-    if(actual->getRight()->getEstado()==true){
+    else if(actual->getRight()->getEstado()==true){
         leerDerecha(actual);
     }
 
-}
-bool palabra::centro(lista* tablero){
-    nodo* actual= tablero->Head;
-    int i=0;
-    while(i<7){
-        actual= actual->getRight();
-    }
-    i=0;
-    while (i<7) {
-        actual=actual->getDown();
-    }
-    if(actual->getEstado()){
-        return true;
-    }
-    else {
-        return false;
-    }
 }
 
 bool palabra::leerAbajo(nodo* final){
@@ -74,22 +57,22 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
                 puntuacion+=final->getValor()->getValor();
                 final= final->getDown();
             }
-            if(final->getPuntuacion()==1){
+            else if(final->getPuntuacion()==1){
                 puntuacion+=final->getValor()->getValor();
                 bonus=3;
                 final->setPuntosAsignados(true);
                 final= final->getDown();
-            }if(final->getPuntuacion()==2){
+            }else if(final->getPuntuacion()==2){
                 puntuacion+=final->getValor()->getValor()*2;
                 final->setPuntosAsignados(true);
                 final= final->getDown();
 
-            }if(final->getPuntuacion()==3){
+            }else if(final->getPuntuacion()==3){
                 puntuacion+=final->getValor()->getValor()*3;
                 final->setPuntosAsignados(true);
                 final= final->getDown();
 
-            }if(final->getPuntuacion()==4){
+            }else if(final->getPuntuacion()==4){
                 puntuacion+=final->getValor()->getValor();
                 bonus=2;
                 final->setPuntosAsignados(true);
@@ -105,22 +88,22 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
                 puntuacion+=final->getValor()->getValor();
                 final= final->getLeft();
             }
-            if(final->getPuntuacion()==1){
+            else if(final->getPuntuacion()==1){
                 puntuacion+=final->getValor()->getValor();
                 bonus=3;
                 final->setPuntosAsignados(true);
                 final= final->getLeft();
-            }if(final->getPuntuacion()==2){
+            }else if(final->getPuntuacion()==2){
                 puntuacion+=final->getValor()->getValor()*2;
                 final->setPuntosAsignados(true);
                 final= final->getLeft();
 
-            }if(final->getPuntuacion()==3){
+            }else if(final->getPuntuacion()==3){
                 puntuacion+=final->getValor()->getValor()*3;
                 final->setPuntosAsignados(true);
                 final= final->getLeft();
 
-            }if(final->getPuntuacion()==4){
+            }else if(final->getPuntuacion()==4){
                 puntuacion+=final->getValor()->getValor();
                 bonus=2;
                 final->setPuntosAsignados(true);
@@ -132,27 +115,113 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
 }
 void palabra::volverFicha(nodo *final){
     nodo* actual= final;
-    if(actual->getUp()->getEstado()==true){
-        while (actual->getUp()->getEstado()==true) {
-            actual= actual->getUp();
+    if(actual->getUp()==nullptr){
+        if(actual->getLeft()==nullptr){
+            if(actual->getDown()->getEstado()==true){
+                quitarAbajo(actual);
+            }
+            else if(actual->getRight()->getEstado()==true){
+                quitarDerecha(actual);
+            }
         }
-        quitarAbajo(actual);
-    }
-    if(actual->getLeft()->getEstado()==true){
-        while (actual->getLeft()->getEstado()==true) {
-            actual= actual->getLeft();
+        if(actual->getRight()==nullptr){
+                if(actual->getLeft()->getEstado()==true){
+                    while (actual->getLeft()->getEstado()==true) {
+                        actual= actual->getLeft();
+                    }
+                }
+                else if(actual->getDown()->getEstado()==true){
+                    quitarAbajo(actual);
+                }
         }
-        quitarDerecha(actual);
-    }
-    if(actual->getDown()->getEstado()==true){
-        quitarAbajo(actual);
-    }
-    if(actual->getRight()->getEstado()==true){
-        quitarDerecha(actual);
-    }
 
+    }
+    else if(actual->getDown()==nullptr){
+        if(actual->getLeft()==nullptr){
+            if(actual->getUp()->getEstado()==true){
+                while (actual->getUp()->getEstado()==true) {
+                    actual= actual->getUp();
+                }
+                quitarAbajo(actual);
+            }
+            else if(actual->getRight()->getEstado()==true){
+                quitarDerecha(actual);
+            }
+        }
+        else if(actual->getRight()==nullptr){
+            if(actual->getLeft()->getEstado()==true){
+                while (actual->getLeft()->getEstado()==true) {
+                    actual= actual->getLeft();
+                }
+            }
+            if(actual->getUp()->getEstado()==true){
+                while (actual->getUp()->getEstado()==true) {
+                    actual= actual->getUp();
+                }
+                quitarAbajo(actual);
+            }
+
+        }
+
+    }
+    else if(actual->getLeft()==nullptr){
+        if(actual->getUp()->getEstado()==true){
+            while (actual->getUp()->getEstado()==true) {
+                actual= actual->getUp();
+            }
+            quitarAbajo(actual);
+        }
+
+        else if(actual->getDown()->getEstado()==true){
+            quitarAbajo(actual);
+        }
+        else if(actual->getRight()->getEstado()==true){
+            quitarDerecha(actual);
+        }
+
+    }
+    else if(actual->getRight()==nullptr){
+        if(actual->getUp()->getEstado()==true){
+            while (actual->getUp()->getEstado()==true) {
+                actual= actual->getUp();
+            }
+            quitarAbajo(actual);
+        }
+
+        else if(actual->getDown()->getEstado()==true){
+            quitarAbajo(actual);
+        }
+
+        else if(actual->getLeft()->getEstado()==true){
+            while (actual->getLeft()->getEstado()==true) {
+                actual= actual->getLeft();
+            }
+            quitarDerecha(actual);
+        }
+    }
+    else{
+        if(actual->getUp()->getEstado()==true){
+            while (actual->getUp()->getEstado()==true) {
+                actual= actual->getUp();
+            }
+            quitarAbajo(actual);
+        }
+        else if(actual->getLeft()->getEstado()==true){
+            while (actual->getLeft()->getEstado()==true) {
+                actual= actual->getLeft();
+            }
+            quitarDerecha(actual);
+        }
+        else if(actual->getDown()->getEstado()==true){
+            quitarAbajo(actual);
+        }
+        else if(actual->getRight()->getEstado()==true){
+            quitarDerecha(actual);
+        }
+    }
 }
 void palabra::quitarAbajo(nodo* final){
+    cout<<"quitarabajo"<<endl;
     nodo* actual= final;
     while (actual->getDown()->getEstado()==true) {
         if(actual->getPuntosAsignados()==false){
@@ -165,6 +234,7 @@ void palabra::quitarAbajo(nodo* final){
     }
 }
 void palabra::quitarDerecha(nodo* final){
+    cout<<"quitar derecha"<<endl;
     nodo* actual= final;
     while (actual->getLeft()->getEstado()==true) {
         if(actual->getPuntosAsignados()==false){

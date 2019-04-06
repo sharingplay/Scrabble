@@ -1,6 +1,8 @@
 #include "adjacent.h"
 #include "lista.h"
 
+
+
 adjacent::adjacent(){}
 
 
@@ -39,6 +41,7 @@ void adjacent::Seters (lista* malla){
                 nodeset->setUp(malla->getNode(x,y-54));
                 nodeset->setDown(malla->getNode(x,y+54));
                 nodeset->setRight(malla->getNode(x+50,y));
+
             }
             else if (nodeset->getX()/50==14 && nodeset->gety()/54!=14 && nodeset->gety()/54!=0){
                 nodeset->setLeft(malla->getNode(x-50,y));

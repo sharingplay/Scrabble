@@ -32,6 +32,12 @@ void jugador::agregarFicha(ficha* ficha){
 lista* jugador::getlista(){
     return listaFichas;
 }
+void jugador::setUltimoNodo(nodo *nodo){
+    this->ultimoNodo = nodo;
+}
+nodo* jugador::getUltimoNodo(){\
+    return ultimoNodo;
+}
     jugador::jugador(){
     this->setTurno(false);
     this->setNombre("");
@@ -39,9 +45,3 @@ lista* jugador::getlista(){
     this->setcantFichas(0);
 }
 
-//    void jugador::keyPressEvent(QKeyEvent *tecla){
-//        if (tecla->key() == Qt::Key_Space){
-//            this->setPuntaje(this->getPuntaje()+5);
-//            cout<<this->getPuntaje()<<endl;
-//        }
-//    }

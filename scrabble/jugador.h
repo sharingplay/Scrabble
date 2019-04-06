@@ -17,14 +17,17 @@ private:
     int cantFichas;
     bool turno;
     lista* listaFichas = new lista ();
+    nodo *ultimoNodo;
 
 public:
     jugador();
+    void setUltimoNodo(nodo *nodo);
     void setNombre(QString nombre);
     void setPuntaje(int puntaje);
     void setcantFichas(int cantFichas);
     void setTurno(bool turno);
     QString getNombre();
+    nodo* getUltimoNodo();
     int getPuntaje();
     int getcantFichas();
     bool getTurno();

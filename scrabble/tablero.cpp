@@ -19,6 +19,10 @@ void tablero::generar(){
             celda->setEstado(false);
             posiciones->insertarFinal(celda);
             x+=50;
+            if(i==6 && j==6){
+                this->centro= celda;
+
+            }
         }
         x=7;
         y+=54;
@@ -28,12 +32,13 @@ void tablero::generar(){
     adjacentes(this->posiciones);
     Puntuacion();
 }
-
 void tablero::adjacentes(lista* posiciones){
     adjacent* lim = new adjacent();
     lim->Seters(posiciones);
 }
-
+nodo* tablero::getcentro(){
+    return this->centro;
+}
 nodo* tablero::acomodar(int x, int y, ficha* ficha){
     nodo* actual= posiciones->Head;
     nodo* anterior= posiciones->Head;
@@ -63,11 +68,19 @@ nodo* tablero::acomodar(int x, int y, ficha* ficha){
             anterior=actual;
             actual=actual->getDown();
         }
+
         if(anterior->getPuntosAsignados()==false and anterior->getEstado()==false ){
             anterior->setValor(ficha);
             anterior->getValor()->setX(anterior->getX());
             anterior->getValor()->setY(anterior->gety());
             anterior->setEstado(true);
+            for(int i = 0;i<1;i++){//cambiar a 4****************************************************
+                jugador *jugadorActual = listaJugadores[i];
+                if (jugadorActual->getTurno()==true){
+                    jugadorActual->setUltimoNodo(anterior);
+                    break;
+                }
+            }
             return anterior;
         }else{
             ficha->setX(ficha->getInicialX());
