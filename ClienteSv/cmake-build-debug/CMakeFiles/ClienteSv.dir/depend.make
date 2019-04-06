@@ -3,8 +3,6 @@
 
 CMakeFiles/ClienteSv.dir/main.cpp.o: ../Cliente.cpp
 CMakeFiles/ClienteSv.dir/main.cpp.o: ../Cliente.h
-CMakeFiles/ClienteSv.dir/main.cpp.o: ../Nodo.cpp
-CMakeFiles/ClienteSv.dir/main.cpp.o: ../Nodo.h
 CMakeFiles/ClienteSv.dir/main.cpp.o: ../main.cpp
 CMakeFiles/ClienteSv.dir/main.cpp.o: ../nlohmann/json.hpp
 
