@@ -70,7 +70,7 @@ void bolsa::crear(){
         if (buscar(posicion, v1)){
             v1 = rand() % 100;
         }else{
-            ficha* letraficha= new ficha(letras[v1]);
+            ficha* letraficha = new ficha(letras[v1]);
             nodo* letra= new nodo();
             letra->setValor(letraficha);
             this->listaFichas->insertarFinal(letra);

@@ -3,11 +3,14 @@
 //
 
 #include "ficha.h"
-void ficha::setValor(int valor){
-    this->valor = valor;
+
+ficha::ficha(char _letra) {}
+
+void ficha::setValor(int _valor){
+    this->valor = _valor;
 }
-void ficha::setLetra(char letra){
-    this->letra = letra;
+void ficha::setLetra(char _letra){
+    this->letra = _letra;
 }
 char ficha::getLetra(){
     return this->letra;
@@ -19,12 +22,12 @@ int ficha::getValor(){
 int ficha::getInicialX(){
     return this->inicialX;
 }
-void ficha::setInicialX(int inicial){
-    this->inicialX = inicial;
+void ficha::setInicialX(int _inicial){
+    this->inicialX = _inicial;
 }
 int ficha::getInicialY(){
     return this->inicialY;
 }
-void ficha::setInicialY(int inicial){
-    this->inicialY = inicial;
+void ficha::setInicialY(int _inicial){
+    this->inicialY = _inicial;
 }

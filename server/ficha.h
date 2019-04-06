@@ -12,16 +12,16 @@ private:
     int valor;
     int inicialX, inicialY;
 public:
-    ficha (char letra);
-    void setLetra(char letra);
+    ficha (char _letra);
+    void setLetra(char _letra);
     void setValor(int valor);
     char getLetra();
     int getValor();
-    void dibujar(ficha* letra);
+    void dibujar(ficha* _letra);
     int getInicialX();
-    void setInicialX(int inicial);
+    void setInicialX(int _inicial);
     int getInicialY();
-    void setInicialY(int inicial);
+    void setInicialY(int _inicial);
 
 };
 

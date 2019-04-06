@@ -1,3 +1,3 @@
-/home/mariana/CLionProjects/server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/mariana/CLionProjects/server/cmake-build-debug/CMakeFiles/server.dir
-/home/mariana/CLionProjects/server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/edgargonza/Desktop/clionLogica/Scrabble-logicaClion/server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/edgargonza/Desktop/clionLogica/Scrabble-logicaClion/server/cmake-build-debug/CMakeFiles/server.dir
+/home/edgargonza/Desktop/clionLogica/Scrabble-logicaClion/server/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -7,7 +7,11 @@
 #include "lista.h"
 #include "ficha.h"
 #include "nodo.h"
+#include <string>
+#include <iostream>
+
 using namespace std;
+using string = std::string;
 
 class jugador {
 private:
