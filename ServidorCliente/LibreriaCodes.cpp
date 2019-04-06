@@ -7,7 +7,7 @@
 #include "string"
 
 LibreriaCodes::LibreriaCodes() {
-    lib[5][5];
+    lib[5][5]={{},{},{}};
 }
 
 string LibreriaCodes::Agregar(string _code, string _nombre) {
