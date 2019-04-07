@@ -31,5 +31,6 @@ public:
     void imprimirPosiciones();
     void imprimirLetra();
     nodo* getcentro();
+    nodo* quitar(int x, int y);
 };
 #endif // TABLERO_H

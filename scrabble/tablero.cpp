@@ -73,6 +73,8 @@ nodo* tablero::acomodar(int x, int y, ficha* ficha){
             anterior->setValor(ficha);
             anterior->getValor()->setX(anterior->getX());
             anterior->getValor()->setY(anterior->gety());
+            ficha->setFinalX(anterior->getX());
+            ficha->setFinalY(anterior->gety());
             anterior->setEstado(true);
             for(int i = 0;i<1;i++){//cambiar a 4****************************************************
                 jugador *jugadorActual = listaJugadores[i];
@@ -86,6 +88,33 @@ nodo* tablero::acomodar(int x, int y, ficha* ficha){
             ficha->setX(ficha->getInicialX());
             ficha->setY(ficha->getInicialY());
         }
+    }
+}
+nodo* tablero::quitar(int x, int y){
+    nodo* actual= posiciones->Head;
+    nodo* anterior= posiciones->Head;
+    int i=0;
+    int x1=actual->getX();
+    int y1=actual->gety();
+    while(x>=actual->getX() and i<15 ){
+        x1=actual->getX();
+        anterior=actual;
+        actual= actual->getSiguiente();
+        i++;
+    }
+    actual=anterior;
+    while(actual!=nullptr && y>actual->gety()){
+        y1=actual->gety();
+        anterior=actual;
+        actual=actual->getDown();
+    }
+    if(anterior->getPuntosAsignados()==false and anterior->getEstado()==true ){
+        anterior->setEstado(false);
+        return anterior;
+    }else {
+        ficha* ficha= anterior->getValor();
+        ficha->setX(ficha->getFinalX());
+        ficha->setY(ficha->getFinalY());
     }
 }
 

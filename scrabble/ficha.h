@@ -14,6 +14,7 @@ private:
     char letra;
     int valor;
     int inicialX, inicialY;
+    int finalX, finalY;
 public:
     ficha(QGraphicsItem * parent = nullptr);
     ficha (char letra);
@@ -26,6 +27,10 @@ public:
     void setInicialX(int inicial);
     int getInicialY();
     void setInicialY(int inicial);
+    int getFinalX();
+    void setFinalX(int inicial);
+    int getFinalY();
+    void setFinalY(int inicial);
 protected:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);

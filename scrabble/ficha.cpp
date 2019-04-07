@@ -143,6 +143,18 @@ ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     void ficha::setInicialY(int inicial){
         this->inicialY = inicial;
     }
+    int ficha::getFinalX(){
+        return this->finalX;
+    }
+    void ficha::setFinalX(int inicial){
+        this->finalX = inicial;
+    }
+    int ficha::getFinalY(){
+        return this->finalY;
+    }
+    void ficha::setFinalY(int inicial){
+        this->finalY = inicial;
+    }
 
     void ficha:: mouseMoveEvent(QGraphicsSceneMouseEvent *event){
         this->setX(event->scenePos().x());
@@ -151,8 +163,10 @@ ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     void ficha::mousePressEvent(QGraphicsSceneMouseEvent *event){
         int x = event->scenePos().x();
         int y = event->scenePos().y();
-        if (x > 0 || x < 760 && y > 0 || y < 810){
+        if (x > 0 && x < 760 && y > 0 && y < 810){
          cout<<"X: "<<x<<"\nY: "<<y<<endl;
+         tablero::getInstance().quitar(x,y);
+
         }
     }
 
