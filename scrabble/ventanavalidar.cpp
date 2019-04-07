@@ -1,8 +1,5 @@
 #include "ventanavalidar.h"
 #include "ui_ventanavalidar.h"
-#include <iostream>
-using namespace std;
-
 
 ventanaValidar::ventanaValidar(QWidget *parent) :
     QDialog(parent),
@@ -23,5 +20,5 @@ void ventanaValidar::on_botonCancelar_clicked()
 
 void ventanaValidar::on_botonValidar_clicked()
 {
-    cout<<"clickValidar"<<endl;
+
 }

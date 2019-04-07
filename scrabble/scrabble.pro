@@ -38,7 +38,9 @@ SOURCES += \
     boton.cpp \
     cliente.cpp \
     ventanavalidar.cpp \
-    lector.cpp
+    lector.cpp \
+    ventanafinpartida.cpp \
+    ventanacomodin.cpp
 
 HEADERS += \
     ficha.h \
@@ -54,12 +56,16 @@ HEADERS += \
     boton.h \
     cliente.h \
     ventanavalidar.h \
-    lector.h
+    lector.h \
+    ventanafinpartida.h \
+    ventanacomodin.h
 
 FORMS += \
         mainwindow.ui \
     mainwindow.ui \
-    ventanavalidar.ui
+    ventanavalidar.ui \
+    ventanafinpartida.ui \
+    ventanacomodin.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

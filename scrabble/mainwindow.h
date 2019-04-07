@@ -13,7 +13,7 @@
 #include "jugador.h"
 #include "QString"
 #include "boton.h"
-#include "ventanavalidar.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -40,7 +40,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    ventanaValidar *ventValidar;
+
 };
 
 #endif // MAINWINDOW_H

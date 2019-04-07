@@ -4,7 +4,8 @@
 #include <QDebug>
 #include <string>
 #include <QFile>
-
+#include "ventanaconfirmar.h"
+#include "ventanavalidar.h"
 using namespace std;
 
 class lector{

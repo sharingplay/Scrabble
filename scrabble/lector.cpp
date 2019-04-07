@@ -26,6 +26,8 @@ bool lector::leer(string *s){
         archivo.flush();
         archivo.close();
         cout<<"No se encontro la palabra"<<endl;
+        ventanaValidar *ventValid= new ventanaValidar();
+        ventValid->show();
         return false;
     }
 }

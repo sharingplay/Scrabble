@@ -48,6 +48,22 @@
     <string>Validar</string>
    </property>
   </widget>
+  <widget class="QLineEdit" name="palabraVerificar">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>60</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/imagenes/blanca.png);</string>
+   </property>
+   <property name="text">
+    <string>Palabra a verificar</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
