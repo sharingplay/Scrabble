@@ -1,0 +1,35 @@
+<RCC>
+    <qresource prefix="/imagenes">
+        <file>A.png</file>
+        <file>tablero.jpg</file>
+        <file>B.png</file>
+        <file>blanca.png</file>
+        <file>C.png</file>
+        <file>D.png</file>
+        <file>E.png</file>
+        <file>F.png</file>
+        <file>G.png</file>
+        <file>H.jpg</file>
+        <file>I.png</file>
+        <file>L.png</file>
+        <file>M.png</file>
+        <file>N.png</file>
+        <file>O.png</file>
+        <file>P.png</file>
+        <file>Q.png</file>
+        <file>R.png</file>
+        <file>S.png</file>
+        <file>T.png</file>
+        <file>U.png</file>
+        <file>V.png</file>
+        <file>W.png</file>
+        <file>X.png</file>
+        <file>Y.png</file>
+        <file>Z.png</file>
+        <file>J.png</file>
+        <file>K.png</file>
+        <file>madera.jpg</file>
+        <file>menu.jpg</file>
+        <file>scrabble.png</file>
+    </qresource>
+</RCC>
