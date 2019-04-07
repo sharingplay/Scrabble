@@ -71,6 +71,10 @@ nodo* tablero::acomodar(int x, int y, ficha* ficha){
 
         if(anterior->getPuntosAsignados()==false and anterior->getEstado()==false ){
             anterior->setValor(ficha);
+            if(anterior->getValor()->getLetra() == 'c'){
+                ventanaComodin *ventCom = new ventanaComodin();
+                ventCom->show();
+            }
             anterior->getValor()->setX(anterior->getX());
             anterior->getValor()->setY(anterior->gety());
             ficha->setFinalX(anterior->getX());

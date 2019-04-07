@@ -7,6 +7,7 @@
 #include "adjacent.h"
 #include "jugador.h"
 #include "lector.h"
+#include "ventanacomodin.h"
 class tablero: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT

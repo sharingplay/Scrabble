@@ -159,18 +159,13 @@ bool palabra::leerAbajo(nodo* final){
     }else{
         tablero::getInstance().setPrimera(true);
         while (actual!= nullptr && actual->getEstado()==true) {
-            if (actual->getValor()->getLetra() == 'c'){
-                ventanaComodin *ventCom = new ventanaComodin();
-                ventCom->show();
-
-                actual->getValor()->setValor(comodin::getInstance().valor);
+            if (actual->getValor()->getLetra()=='c'){
                 actual->getValor()->setLetra(comodin::getInstance().letra);
+                actual->getValor()->setValor(comodin::getInstance().valor);
+
+            }
                 palabra+=actual->getValor()->getLetra();
                 actual= actual->getDown();
-            }else{
-                palabra+=actual->getValor()->getLetra();
-                actual= actual->getDown();
-                }
             }
 
         std::cout<<palabra<<endl;
@@ -320,6 +315,9 @@ void palabra::volverFicha(nodo *final){
     nodo* actual= final;
     if(actual->getUp()==nullptr){
         if(actual->getLeft()==nullptr){
+            //if(actual->getDown()->getEstado()==true && actual->getRight()->getEstado()==true){
+                //quitarNodo(final);
+            //}
             if(actual->getDown()->getEstado()==true){
                 quitarAbajo(actual);
             }
@@ -328,15 +326,18 @@ void palabra::volverFicha(nodo *final){
             }
         }
         if(actual->getRight()==nullptr){
-                if(actual->getLeft()->getEstado()==true){
-                    while (actual->getLeft()!=nullptr && actual->getLeft()->getEstado()==true) {
-                        actual= actual->getLeft();
-                    }
-                    quitarDerecha(actual);
+            //if(actual->getDown()->getEstado()==true && actual->getRight()->getEstado()==true){
+                //quitarNodo(final);
+            //}
+            if(actual->getLeft()->getEstado()==true){
+                while (actual->getLeft()!=nullptr && actual->getLeft()->getEstado()==true) {
+                    actual= actual->getLeft();
                 }
-                else if(actual->getDown()->getEstado()==true){
-                    quitarAbajo(actual);
-                }
+                quitarDerecha(actual);
+            }
+            else if(actual->getDown()->getEstado()==true){
+                quitarAbajo(actual);
+            }
         }else{
 
             if(actual->getLeft()->getEstado()==true){

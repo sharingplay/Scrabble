@@ -120,5 +120,6 @@ void ventanaComodin::on_botonSeleccionar_clicked()
         comodin::getInstance().letra = 'Z';
         comodin::getInstance().valor = 10;
     }
+    close();
     cout<<"letra "<<comodin::getInstance().letra<<" valor "<<comodin::getInstance().valor<<endl;
 }

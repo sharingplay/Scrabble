@@ -4,7 +4,6 @@
 #include "tablero.h"
 #include "lector.h"
 #include "iostream"
-#include "ventanacomodin.h"
 using namespace std;
 class palabra
 {
