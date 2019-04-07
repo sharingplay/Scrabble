@@ -59,8 +59,10 @@ void bolsa::crear(){
     int posicion[100];
     int v1 = rand() % 100; //0 a 99
     int i=0;
+    srand(time(0));
     while (i<100){
         bool exists= find(std::begin(posicion),std::end(posicion),v1)!=std::end(posicion);
+        cout<<"v1: "<<v1<<" exist "<<exists<<endl;
         if (exists){
             v1 = rand() % 100;
         }else{

@@ -35,7 +35,7 @@ ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
             setLetra('G');
             setValor(2);
             break;
-        case 'H': setPixmap(QPixmap(":/imagenes/H.png"));
+        case 'H': setPixmap(QPixmap(":/imagenes/H.jpg"));
             setLetra('H');
             setValor(4);
             break;

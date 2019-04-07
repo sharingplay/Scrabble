@@ -189,10 +189,10 @@ bool palabra::leerDerecha(nodo* final){
     //diccionario
 }
 int palabra::asignarPuntuacion(nodo* final, int direccion){
-    int puntuacion;
+    int puntuacion=0;
     int bonus=1;
     if(direccion==1){
-        while (final->getDown()->getEstado()==true) {
+        while (final!= nullptr && final->getEstado()==true) {
             if(final->getPuntosAsignados()==true){
                 puntuacion+=final->getValor()->getValor();
                 final= final->getDown();
@@ -216,6 +216,9 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
                 puntuacion+=final->getValor()->getValor();
                 bonus=2;
                 final->setPuntosAsignados(true);
+                final= final->getDown();
+            }else{
+                puntuacion+=final->getValor()->getValor();
                 final= final->getDown();
             }
         }
@@ -225,7 +228,7 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
         //agregar puntuacion al jugador
     }
     if(direccion==2){
-        while (final->getRight()->getEstado()==true) {
+        while (final!= nullptr && final->getEstado()==true) {
             if(final->getPuntosAsignados()==true){
                 puntuacion+=final->getValor()->getValor();
                 final= final->getRight();
@@ -250,8 +253,12 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
                 bonus=2;
                 final->setPuntosAsignados(true);
                 final= final->getRight();
+            }else{
+                puntuacion+=final->getValor()->getValor();
+                final= final->getRight();
             }
         }
+        puntuacion*=bonus;
         cout<<puntuacion<<endl;
         //agregar puntuacion al jugador
     }
