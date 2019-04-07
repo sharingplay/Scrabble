@@ -2,13 +2,13 @@
 // Created by edgargonza on 03/04/19.
 //
 
-#include "Cliente.h"
 #include <iostream>
+#include "Cliente.h"
 #include "string"
 
-Cliente::Cliente(int _port) {
+Cliente::Cliente(int port) {
 
-    this->port = _port;
+    this->port = port;
 
 }
 

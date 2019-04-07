@@ -5,6 +5,7 @@
 #ifndef SERVIDORCLIENTE_CLIENTE_H
 #define SERVIDORCLIENTE_CLIENTE_H
 
+#include "nlohmann/json.hpp"
 #include<stdlib.h>
 #include<string.h>
 #include<sys/socket.h>
@@ -12,17 +13,16 @@
 #include<unistd.h>
 #include<stdio.h>
 #include "string"
-#include"nlohmann/json.hpp"
-
 using string = std::string;
+
+
 using json = nlohmann::json;
 
 class Cliente {
-
 public:
     string data;
 
-    Cliente(int _port);
+    Cliente(int port);
 
     int sendJson(string msg);
 
@@ -34,6 +34,7 @@ public:
 
     // Send the data to the server and set the timeout of 20 seconds
     int SocketSend(int hSocket,char* Rqst,short lenRqst);
+
 
     //receive the data from the server
     int SocketReceive(int hSocket,char* Rsp,short RvcSize);

@@ -7,14 +7,16 @@
 #IncludeRegexTransform: 
 
 /home/edgargonza/Desktop/ClienteSv/Cliente.cpp
-Cliente.h
-/home/edgargonza/Desktop/ClienteSv/Cliente.h
 iostream
 -
+Cliente.h
+/home/edgargonza/Desktop/ClienteSv/Cliente.h
 string
 /home/edgargonza/Desktop/ClienteSv/string
 
 /home/edgargonza/Desktop/ClienteSv/Cliente.h
+nlohmann/json.hpp
+/home/edgargonza/Desktop/ClienteSv/nlohmann/json.hpp
 stdlib.h
 -
 string.h
@@ -29,8 +31,6 @@ stdio.h
 -
 string
 /home/edgargonza/Desktop/ClienteSv/string
-nlohmann/json.hpp
-/home/edgargonza/Desktop/ClienteSv/nlohmann/json.hpp
 
 /home/edgargonza/Desktop/ClienteSv/main.cpp
 iostream
