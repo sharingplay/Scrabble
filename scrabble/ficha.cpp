@@ -149,7 +149,11 @@ ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
         this->setY(event->scenePos().y());
     }
     void ficha::mousePressEvent(QGraphicsSceneMouseEvent *event){
-
+        int x = event->scenePos().x();
+        int y = event->scenePos().y();
+        if (x > 0 || x < 760 && y > 0 || y < 810){
+         cout<<"X: "<<x<<"\nY: "<<y<<endl;
+        }
     }
 
     void ficha::mouseReleaseEvent(QGraphicsSceneMouseEvent *event){
