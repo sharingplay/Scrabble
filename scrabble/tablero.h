@@ -12,6 +12,7 @@ class tablero: public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 private:
     nodo* centro;
+    bool primeraPalabra;
 public:
 
     static tablero& getInstance(){
@@ -31,6 +32,8 @@ public:
     void imprimirPosiciones();
     void imprimirLetra();
     nodo* getcentro();
-    nodo* quitar(int x, int y);
+    bool quitar(int x, int y);
+    bool getPrimera();
+    bool setPrimera(bool bandera);
 };
 #endif // TABLERO_H

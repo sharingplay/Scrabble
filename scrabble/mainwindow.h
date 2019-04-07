@@ -13,7 +13,7 @@
 #include "jugador.h"
 #include "QString"
 #include "boton.h"
-
+#include "ventanacomodin.h"
 
 namespace Ui {
 class MainWindow;

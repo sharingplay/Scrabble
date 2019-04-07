@@ -37,6 +37,8 @@ void bolsa::repartir(int cantidad, jugador* jugador){
         temp->getValor()->setY(y);
         temp->getValor()->setInicialX(x);
         temp->getValor()->setInicialY(y);
+        temp->getValor()->setFinalX(x);
+        temp->getValor()->setFinalY(y);
         temp->getValor()->dibujar(temp->getValor());
         temp= temp->getSiguiente();
 

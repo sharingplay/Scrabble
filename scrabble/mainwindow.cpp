@@ -66,5 +66,6 @@ void MainWindow::on_pushButtonJugar_clicked()
 
 void MainWindow::on_botonUnirse_clicked()
 {
-
+    ventanaComodin *ventCom = new ventanaComodin();
+    ventCom->show();
 }

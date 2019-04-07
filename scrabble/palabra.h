@@ -4,6 +4,7 @@
 #include "tablero.h"
 #include "lector.h"
 #include "iostream"
+#include "ventanacomodin.h"
 using namespace std;
 class palabra
 {
@@ -18,6 +19,8 @@ public:
     void volverFicha(nodo* final);
     void quitarAbajo(nodo* final);
     void quitarDerecha(nodo* final);
+    bool unionPalabrasAbajo(nodo* final);
+    bool unionPalabrasDerecha(nodo* final);
 
 };
 

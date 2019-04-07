@@ -112,7 +112,7 @@ ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
             setValor(10);
             break;
         case 'c': setPixmap(QPixmap(":/imagenes/blanca.png"));
-            setLetra(' ');
+            setLetra('c');
             setValor(0);
             break;
         }
@@ -159,22 +159,37 @@ ficha::ficha (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     void ficha:: mouseMoveEvent(QGraphicsSceneMouseEvent *event){
         this->setX(event->scenePos().x());
         this->setY(event->scenePos().y());
+
     }
+
     void ficha::mousePressEvent(QGraphicsSceneMouseEvent *event){
         int x = event->scenePos().x();
         int y = event->scenePos().y();
-        if (x > 0 && x < 760 && y > 0 && y < 810){
-         cout<<"X: "<<x<<"\nY: "<<y<<endl;
-         tablero::getInstance().quitar(x,y);
+        //if (x > 0 && x < 760 && y > 0 && y < 810){
+          //  if(tablero::getInstance().quitar(x,y)){
 
-        }
+            //}else{
+              //  this->setX(this->getFinalX());
+                //this->setY(this->getFinalY());
+            //}
+        //}
     }
 
     void ficha::mouseReleaseEvent(QGraphicsSceneMouseEvent *event){
         int mouseX = event->scenePos().x();
         int mouseY = event->scenePos().y();
-        tablero::getInstance().acomodar(mouseX,mouseY,this);
-        tablero::getInstance().imprimirLetra();
+        if (this->getFinalX() > 0 && this->getFinalX() < 760 && this->getFinalY() > 0 && this->getFinalY() < 810){
+            if(tablero::getInstance().quitar(this->getFinalX(),this->getFinalY())){
+                tablero::getInstance().acomodar(mouseX,mouseY,this);
+                tablero::getInstance().imprimirLetra();
+            }else{
+                this->setX(this->getFinalX());
+                this->setY(this->getFinalY());
+            }
+        }else{
+            tablero::getInstance().acomodar(mouseX,mouseY,this);
+            tablero::getInstance().imprimirLetra();
+        }
 
     }
     void ficha::dibujar(ficha* letra){

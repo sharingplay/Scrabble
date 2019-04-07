@@ -40,7 +40,8 @@ SOURCES += \
     ventanavalidar.cpp \
     lector.cpp \
     ventanafinpartida.cpp \
-    ventanacomodin.cpp
+    ventanacomodin.cpp \
+    comodin.cpp
 
 HEADERS += \
     ficha.h \
@@ -58,7 +59,8 @@ HEADERS += \
     ventanavalidar.h \
     lector.h \
     ventanafinpartida.h \
-    ventanacomodin.h
+    ventanacomodin.h \
+    comodin.h
 
 FORMS += \
         mainwindow.ui \

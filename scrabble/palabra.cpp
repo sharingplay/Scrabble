@@ -153,40 +153,91 @@ bool palabra::verificar(nodo* final){
 bool palabra::leerAbajo(nodo* final){
     nodo* actual= final;
     string palabra;
-    while (actual!= nullptr && actual->getEstado()==true) {
-        palabra+=actual->getValor()->getLetra();
-        actual= actual->getDown();
-    }
-    std::cout<<palabra<<endl;
-    string* palabraptr= &palabra;
-    if (lector::getInstance().leer(palabraptr) == true){
-        cout<<"Palabra verificada"<<endl;
-        asignarPuntuacion(final,1);
-}
-    else {
-        cout<<"Palabra no encontrada"<<endl;
-    }
+    if(!unionPalabrasAbajo(final) && tablero::getInstance().getPrimera()){
+        quitarAbajo(final);
+
+    }else{
+        tablero::getInstance().setPrimera(true);
+        while (actual!= nullptr && actual->getEstado()==true) {
+            if (actual->getValor()->getLetra() == 'c'){
+                ventanaComodin *ventCom = new ventanaComodin();
+                ventCom->show();
+
+                actual->getValor()->setValor(comodin::getInstance().valor);
+                actual->getValor()->setLetra(comodin::getInstance().letra);
+                palabra+=actual->getValor()->getLetra();
+                actual= actual->getDown();
+            }else{
+                palabra+=actual->getValor()->getLetra();
+                actual= actual->getDown();
+                }
+            }
+
+        std::cout<<palabra<<endl;
+        string* palabraptr= &palabra;
+        if (lector::getInstance().leer(palabraptr) == true){
+            cout<<"Palabra verificada"<<endl;
+            asignarPuntuacion(final,1);
+        }
+        else {
+            quitarAbajo(final);
+            cout<<"Palabra no encontrada"<<endl;
+        }
     //diccionario
+    }
 }
+
+bool palabra::unionPalabrasAbajo(nodo* final){
+    nodo* actual= final;
+    while(actual->getEstado()==true){
+        if(actual->getPuntosAsignados() ==true){
+            return true;
+        }
+        else{
+            actual= actual->getDown();
+        }
+    }
+    return false;
+}
+bool palabra::unionPalabrasDerecha(nodo* final){
+    nodo* actual= final;
+    while(actual->getEstado()==true){
+        if(actual->getPuntosAsignados() ==true){
+            return true;
+        }
+        else{
+            actual= actual->getRight();
+        }
+    }
+    return false;
+}
+
 bool palabra::leerDerecha(nodo* final){
     nodo* actual= final;
     string palabra;
-    while (actual!= nullptr && actual->getEstado()==true) {
-        palabra+=actual->getValor()->getLetra();
-        actual= actual->getRight();
-    }
-    cout<<palabra<<endl;
-    string* palabraptr= &palabra;
+    if(!unionPalabrasDerecha(final) && tablero::getInstance().getPrimera()){
+        quitarDerecha(final);
 
-    if (lector::getInstance().leer(palabraptr) == true){
-        cout<<"Palabra verificada"<<endl;
+    }else{
+        tablero::getInstance().setPrimera(true);
+        while (actual!= nullptr && actual->getEstado()==true) {
+            palabra+=actual->getValor()->getLetra();
+            actual= actual->getRight();
+        }
+        cout<<palabra<<endl;
+        string* palabraptr= &palabra;
 
-        asignarPuntuacion(final,2);//revisar.....................
-}
-    else {
-        cout<<"Palabra no encontrada"<<endl;
-    }
+        if (lector::getInstance().leer(palabraptr) == true){
+            cout<<"Palabra verificada"<<endl;
+
+            asignarPuntuacion(final,2);//revisar.....................
+        }
+        else {
+            cout<<"Palabra no encontrada"<<endl;
+        }
+        quitarDerecha(final);
     //diccionario
+    }
 }
 int palabra::asignarPuntuacion(nodo* final, int direccion){
     int puntuacion=0;
@@ -218,6 +269,7 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
                 final->setPuntosAsignados(true);
                 final= final->getDown();
             }else{
+                final->setPuntosAsignados(true);
                 puntuacion+=final->getValor()->getValor();
                 final= final->getDown();
             }
@@ -254,6 +306,7 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
                 final->setPuntosAsignados(true);
                 final= final->getRight();
             }else{
+                final->setPuntosAsignados(true);
                 puntuacion+=final->getValor()->getValor();
                 final= final->getRight();
             }
@@ -406,7 +459,6 @@ void palabra::volverFicha(nodo *final){
     }
 }
 void palabra::quitarAbajo(nodo* final){
-    cout<<"quitarabajo"<<endl;
     nodo* actual= final;
     while (actual!= nullptr && actual->getEstado()==true) {
         if(actual->getPuntosAsignados()==false){
@@ -421,7 +473,6 @@ void palabra::quitarAbajo(nodo* final){
     }
 }
 void palabra::quitarDerecha(nodo* final){
-    cout<<"quitar derecha"<<endl;
     nodo* actual= final;
     while (actual!= nullptr && actual->getEstado()==true) {
         if(actual->getPuntosAsignados()==false){

@@ -90,7 +90,7 @@ nodo* tablero::acomodar(int x, int y, ficha* ficha){
         }
     }
 }
-nodo* tablero::quitar(int x, int y){
+bool tablero::quitar(int x, int y){
     nodo* actual= posiciones->Head;
     nodo* anterior= posiciones->Head;
     int i=0;
@@ -103,18 +103,21 @@ nodo* tablero::quitar(int x, int y){
         i++;
     }
     actual=anterior;
-    while(actual!=nullptr && y>actual->gety()){
+    while(actual!=nullptr && y>=actual->gety()){
         y1=actual->gety();
         anterior=actual;
         actual=actual->getDown();
     }
-    if(anterior->getPuntosAsignados()==false and anterior->getEstado()==true ){
+    bool asig= anterior->getPuntosAsignados();
+    bool estado=anterior->getEstado();
+    if(anterior->getPuntosAsignados()==false && anterior->getEstado()==true ){
         anterior->setEstado(false);
-        return anterior;
+        return true;
     }else {
-        ficha* ficha= anterior->getValor();
-        ficha->setX(ficha->getFinalX());
-        ficha->setY(ficha->getFinalY());
+        //ficha* ficha= anterior->getValor();
+        //ficha->setX(ficha->getFinalX());
+        //ficha->setY(ficha->getFinalY());
+        return false;
     }
 }
 
@@ -174,6 +177,13 @@ void tablero::imprimirLetra(){
         }
         std::cout<<"]"<<endl;
     }
+}
+bool tablero::getPrimera(){
+    return this->primeraPalabra;
+}
+bool tablero::setPrimera(bool bandera){
+    this->primeraPalabra=bandera;
+
 }
 
 
