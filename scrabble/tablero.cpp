@@ -11,6 +11,7 @@ tablero::tablero(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 void tablero::generar(){
     int x=7;
     int y=10;
+    lector *lectorA = new lector();
     for (int i=0;i!=15;i++) {
         for (int j=0;j!=15;j++) {
             nodo *celda = new nodo();
@@ -19,7 +20,7 @@ void tablero::generar(){
             celda->setEstado(false);
             posiciones->insertarFinal(celda);
             x+=50;
-            if(i==6 && j==6){
+            if(i==7 && j==7){
                 this->centro= celda;
 
             }
@@ -47,7 +48,6 @@ nodo* tablero::acomodar(int x, int y, ficha* ficha){
     int y1=actual->gety();
     while(x>=actual->getX() and i<15 ){
         x1=actual->getX();
-        std::cout<<x<<";"<<actual->getX();
         anterior=actual;
         actual= actual->getSiguiente();
         i++;

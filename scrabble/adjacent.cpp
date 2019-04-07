@@ -56,14 +56,12 @@ void adjacent::Seters (lista* malla){
                 nodeset->setRight(malla->getNode(x+50,y));
             }
             else if (nodeset->getX()/50!=0 && nodeset->getX()/50!=14 && nodeset->gety()/54==14){
-                std::cout << "2" << std::endl;
                 nodeset->setLeft(malla->getNode(x-50,y));
                 nodeset->setUp(malla->getNode(x,y-54));
                 nodeset->setDown(nullptr);
                 nodeset->setRight(malla->getNode(x+50,y));
             }
             else if (nodeset->getX()/50==14 && nodeset->gety()/54==14){
-                std::cout << "ultimo " << std::endl;
                 nodeset->setLeft(malla->getNode(x-50,y));
                 nodeset->setUp(malla->getNode(x,y-54));
                 nodeset->setDown(nullptr);

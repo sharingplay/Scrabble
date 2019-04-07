@@ -2,7 +2,9 @@
 #define PALABRA_H
 #include <lista.h>
 #include "tablero.h"
-
+#include "lector.h"
+#include "iostream"
+using namespace std;
 class palabra
 {
 private:

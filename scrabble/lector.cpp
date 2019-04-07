@@ -8,7 +8,7 @@ bool lector::leer(string *s){
 
     QFile archivo("/home/mario/Desktop/Scrabble/diccionario.txt");
     if(!archivo.exists()){
-        qDebug()<<"El archivo no existe el archivo";
+        qDebug()<<"El archivo no existe";
         return false;
     }
     else {
@@ -19,13 +19,13 @@ bool lector::leer(string *s){
             linea = stream.readLine();
             string palabra= linea.toUtf8().constData();
             if(*s == palabra){
-                qDebug()<<"Encontro la palabra"<<endl;
+                cout<<"Encontro la palabra"<<endl;
                 return true;
             }
-        }
-        qDebug()<<"No se encontro la palabra"<<endl;
+        } 
         archivo.flush();
         archivo.close();
+        cout<<"No se encontro la palabra"<<endl;
         return false;
     }
 }

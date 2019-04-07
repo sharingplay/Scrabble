@@ -20,7 +20,13 @@ void bolsa::repartir(int cantidad, jugador* jugador){
               jugador->setcantFichas(jugador->getcantFichas()+1);
             }
         cantidadFichas-=1;
-        cantidad-=1;
+        if(cantidadFichas ==0){
+            cout<<"Ya no hay fichas en la bolsa"<<endl;
+            //llamar al fin del juego.
+        }
+        else{
+          cantidad-=1;
+        }
     }
 
     nodo* temp = jugador->getlista()->Head;
@@ -45,15 +51,6 @@ void bolsa::repartir(int cantidad, jugador* jugador){
 }
 
 
-void bolsa::restarCantidad(int fichas){
-    cantidadFichas-= fichas;
-}
-lista bolsa::displayFichas(){
-
-}
-int bolsa::getCantidad(){
-    return cantidadFichas;
-}
 //!
 //! \brief bolsa::crear
 //! Crea la lista de nodos de la bolsa y asigna fichas a cada nodo
