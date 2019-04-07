@@ -1,2 +1,2 @@
 # Scrabble
-proyecto I de dAlgoritmos y Estructuras de Datos II, Scrabble
+proyecto I de Algoritmos y Estructuras de Datos II, Scrabble
