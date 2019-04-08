@@ -248,7 +248,9 @@ bool palabra::leerDerecha(nodo* final){
 
         if (lector::getInstance().leer(palabraptr) == true){
             cout<<"Palabra verificada"<<endl;
-            asignarPuntuacion(final,2);//revisar.....................
+
+            int a = asignarPuntuacion(final,2);//revisar.....................
+            tablero::getInstance().listaJugadores[0]->setPuntaje(tablero::getInstance().listaJugadores[0]->getPuntaje()+a);
             bolsa::getInstance().repartir(2,tablero::getInstance().listaJugadores[0]);
         }
         else {
@@ -301,6 +303,7 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
 
         puntuacion*=bonus;
         cout<<puntuacion<<endl;
+        tablero::getInstance().listaJugadores[0]->setPuntaje(tablero::getInstance().listaJugadores[0]->getPuntaje()+puntuacion);
 
         //agregar puntuacion al jugador
     }
@@ -343,7 +346,9 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
             }
         }
         puntuacion*=bonus;
-        cout<<puntuacion<<endl;
+        cout<<puntuacion<<endl;\
+
+        tablero::getInstance().listaJugadores[0]->setPuntaje(tablero::getInstance().listaJugadores[0]->getPuntaje()+puntuacion);
         //agregar puntuacion al jugador
     }
 }

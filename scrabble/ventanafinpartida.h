@@ -2,6 +2,7 @@
 #define VENTANAFINPARTIDA_H
 
 #include <QDialog>
+#include "tablero.h"
 
 namespace Ui {
 class ventanaFinPartida;
@@ -16,7 +17,12 @@ public:
     ~ventanaFinPartida();
 
 private slots:
+    //!
+    //! \brief on_botonSalir_clicked, cierra la ventana
+    //!
     void on_botonSalir_clicked();
+
+    void on_botonGanador_clicked();
 
 private:
     Ui::ventanaFinPartida *ui;

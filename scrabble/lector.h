@@ -16,6 +16,11 @@ public:
                return instance;
     }
     lector();
+    //!
+    //! \brief leer, busca en el diccionario la palabra que el jugador necesita
+    //! \param s, palabra a buscar
+    //! \return devuelve true si la encuentra y false si no la encuentra
+    //!
     bool leer(string* s);
 };
 

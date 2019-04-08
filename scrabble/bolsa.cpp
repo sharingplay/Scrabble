@@ -12,27 +12,29 @@ bolsa::bolsa()
 //!
 void bolsa::repartir(int cantidad, jugador* jugador){
     while(cantidad>0){
-        if(this->listaFichas->Head != nullptr){
-              nodo* toReturn = listaFichas->Head;
-              listaFichas->Head = listaFichas->Head->getSiguiente();
-              toReturn->setSiguiente(jugador->getlista()->Head);
-              jugador->getlista()->Head= toReturn;
-              jugador->setcantFichas(jugador->getcantFichas()+1);
-        }
-        cantidadFichas-=1;
-        if(cantidadFichas ==0){
-            cout<<"Ya no hay fichas en la bolsa"<<endl;
-            //llamar al fin del juego.
-        }
-        else{
-          cantidad-=1;
-        }
+            if(this->listaFichas->Head != nullptr){
+                  nodo* toReturn = listaFichas->Head;
+                  listaFichas->Head = listaFichas->Head->getSiguiente();
+                  toReturn->setSiguiente(jugador->getlista()->Head);
+                  jugador->getlista()->Head= toReturn;
+                  jugador->setcantFichas(jugador->getcantFichas()+1);
+            }
+            cantidadFichas-=1;
+            if(cantidadFichas ==0){
+                cout<<"Ya no hay fichas en la bolsa"<<endl;
+                ventanaFinPartida *ventFin = new ventanaFinPartida();
+                ventFin->show();
+            }
+            else{
+              cantidad-=1;
+            }
+        //}
     }
 
     nodo* temp = jugador->getlista()->Head;
     int x = 100;
     int y = 820;
-    while(temp!= nullptr){
+    while(temp!= nullptr){//reparte las fichas iniiales
         temp->getValor()->setX(x);
         temp->getValor()->setY(y);
         temp->getValor()->setInicialX(x);
@@ -41,7 +43,6 @@ void bolsa::repartir(int cantidad, jugador* jugador){
         temp->getValor()->setFinalY(y);
         temp->getValor()->dibujar(temp->getValor());
         temp= temp->getSiguiente();
-
         x += 50;
     }
     nodo* aux = jugador->getlista()->Head;

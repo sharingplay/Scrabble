@@ -44,6 +44,8 @@ nodo* jugador::getUltimoNodo(){\
     this->setPuntaje(0);
     this->setcantFichas(0);
 }
+
+
 void jugador::eliminar(ficha* ficha){
    nodo* actual= this->listaFichas->Head;
    nodo* anterior= this->listaFichas->Head;

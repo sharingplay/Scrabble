@@ -6,6 +6,7 @@ ventanaFinPartida::ventanaFinPartida(QWidget *parent) :
     ui(new Ui::ventanaFinPartida)
 {
     ui->setupUi(this);
+
 }
 
 ventanaFinPartida::~ventanaFinPartida()
@@ -16,4 +17,12 @@ ventanaFinPartida::~ventanaFinPartida()
 void ventanaFinPartida::on_botonSalir_clicked()
 {
     close();
+}
+
+void ventanaFinPartida::on_botonGanador_clicked()
+{
+    string ganador;
+    //for (i)
+    ui->labelGanador->setText("             Jugador 1");
+
 }

@@ -9,9 +9,17 @@ public:
                static comodin instance;
                return instance;
     }
-
+    //!
+    //! \brief comodin, constructor del comodin
+    //!
     comodin();
+    //!
+    //! \brief letra, letra que se le asigna al comodin
+    //!
     char letra = ' ';
+    //!
+    //! \brief valor, valor que se le asigna al comodin
+    //!
     int valor = 0;
 };
 

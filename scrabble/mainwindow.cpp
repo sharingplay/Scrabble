@@ -30,6 +30,8 @@ void MainWindow::on_pushButtonJugar_clicked()
     view->setFixedSize(1250,900);
     escena->setSceneRect(0,0,1250,900);
 
+
+
     //crea tablero y lo agrega a la escena
     tablero *tableroFondo = new tablero();
     tableroFondo->setX(0);
@@ -42,14 +44,16 @@ void MainWindow::on_pushButtonJugar_clicked()
     tablero::getInstance().listaJugadores[0] = jugador1;
     QString nombre = ui->lineEdit_nombreJugador->text();
     jugador1->setNombre(nombre);
-    jugador1->setPuntaje(10);
-    QString datos = "Nombre:" + nombre + "\nPuntaje:           " + QString::number(jugador1->getPuntaje());
+    jugador1->setPuntaje(0);
 
-    //Mostrar Datos de los jugadores
-    QGraphicsTextItem *datosJugador1 = new QGraphicsTextItem;
-    datosJugador1->setScale(2);
-    datosJugador1->setPos(800,50);
-    datosJugador1->setPlainText(datos);
+    //QString datos = "Nombre:" + nombre + "\nPuntaje:           " + QString::number(jugador1->getPuntaje());
+
+
+//    QGraphicsTextItem *datosJugador1 = new QGraphicsTextItem;
+//    datosJugador1->setScale(2);
+//    datosJugador1->setPos(800,50);
+//    datosJugador1->setPlainText(datos);
+//    escena->addItem(datosJugador1);
 
     //crea bolsa y reparte fichas al jugador
     bolsa::getInstance().crear();
@@ -59,13 +63,17 @@ void MainWindow::on_pushButtonJugar_clicked()
     boton* botonJugar = new boton();
     botonJugar->setX(800);
     botonJugar->setY(675);
-
     escena->addItem(botonJugar);
-    escena->addItem(datosJugador1);
+    //Mostrar Datos de los jugadores
+//    QString datosJugador = "Nombre: "+ jugador1->getNombre()+"       Puntos: " + QString::number(jugador1->getPuntaje());
+//    QLineEdit* widgetDatosJugador = new QLineEdit(datosJugador);
+//    widgetDatosJugador->move(800,50);
+//    widgetDatosJugador->resize(500,100);
+//    QGraphicsProxyWidget* widgetLinea = escena->addWidget(widgetDatosJugador);
 }
 
 void MainWindow::on_botonUnirse_clicked()
 {
-    ventanaComodin *ventCom = new ventanaComodin();
-    ventCom->show();
+    ventanaFinPartida *ventFin = new ventanaFinPartida();
+    ventFin->show();
 }

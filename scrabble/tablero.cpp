@@ -1,5 +1,6 @@
 #include "tablero.h"
 #include "QGraphicsScene"
+#include "mainwindow.h"
 
 
 tablero::tablero(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){

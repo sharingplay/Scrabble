@@ -3,6 +3,7 @@
 #include "lista.h"
 #include "ficha.h"
 #include "jugador.h"
+#include "ventanafinpartida.h"
 
 
 class bolsa
@@ -18,13 +19,21 @@ public:
                static bolsa instance;
                return instance;
     }
-
+    //!
+    //! \brief bolsa, contrusctor de la bolsa con las letras a utilizar
+    //!
     bolsa();
-    int cantidadFichas = 100;
+    int cantidadFichas = 100; //cantidad de fichas
+    //!
+    //! \brief repartir, reparte fichas de la bolsa a los jugadores.
+    //! \param cantidad, cantida de fichas que se le deben repartir al jugador
+    //! \param jugador, jugador al que se le debe repartir las fichas
+    //!
     void repartir(int cantidad, jugador* jugador);
+    //!
+    //! \brief crear, crea la bolsa con las fichas acomodadas de forma aleatoria
+    //!
     void crear();
-    bool verificar(int num, int numeros[]);
-    int cantFichas();
 };
 
 #endif // BOLSA_H

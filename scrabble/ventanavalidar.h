@@ -16,8 +16,13 @@ public:
     ~ventanaValidar();
 
 private slots:
+    //!
+    //! \brief on_botonCancelar_clicked, no valida la palabra y cierra la ventana
+    //!
     void on_botonCancelar_clicked();
-
+    //!
+    //! \brief on_botonValidar_clicked, envia mensaje al telefono del experto para validar la palabra
+    //!
     void on_botonValidar_clicked();
 
 private:
