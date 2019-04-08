@@ -1,6 +1,7 @@
 #include "servidor.h"
 #include <stdlib.h>
 #include <iostream>
+#include <string>
 #include "string"
 #include <QtDebug>
 #include "/home/edgargonza/Desktop/nlohmann/json.hpp"
@@ -72,8 +73,12 @@ int servidor::runServer(){
     //Listen
     listen(socket_desc , 3);
 
-    //Accept and incoming connection
+    //Se crea una sala
+    //sala* sala1;
 
+    //cola* colaA = new cola();
+
+    //Accept and incoming connection
     while(1)
     {
 
@@ -84,6 +89,7 @@ int servidor::runServer(){
 
         //accept connection from an incoming client
         sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen);
+
         if (sock < 0)
         {
             perror("accept failed");
@@ -91,6 +97,13 @@ int servidor::runServer(){
         }
         printf("Connection accepted\n");
 
+        /*if (clientNext == sock){
+            send(sock , "Hola Soy el JugadorN" , 22 , 0);
+        }
+
+        //Enviar solucion
+        send(sock , "Hola soy el servidor" , 21 , 0);
+        send(sock , "Juegue" , 21 , 0);*/
 
         memset(client_message, '\0', sizeof client_message);
         memset(message, '\0', sizeof message);
@@ -105,53 +118,74 @@ int servidor::runServer(){
 
         printf("Cliente %i\n me envio: %s\n", sock,client_message);
 
+
         string str(client_message);
 
         json js = modJS->stringAJson(client_message);
 
         //Claves del Json recivido
+        auto jugador = js.find("jugador");
+        string j1 = *jugador;
+        cout<<"El jugador es: "<< j1<<endl;
+
         auto turno = js.find("turno");
         bool t1 = *turno;
-        cout<<t1<<endl;
-
-        /*auto jugador = js.find("jugador");
-        string j1 = *turno;
-        cout<<j1<<endl;
+        cout<<"El estado del jugador es: "<<t1<<endl;
 
         auto codigo = js.find("codigo");
-        string cod1 = *turno;
-        cout<<cod1<<endl;
-*/
+        string cod1 = *codigo;
+        cout<<"En codigo de la sala del jugador es: "<<cod1<<endl;
+
         auto puntos = js.find("puntos");
         int p1 = *puntos;
-        cout<<p1<<endl;
+        cout<<"Los puntos del jugador son: "<<p1<<endl;
 
         /*int tablero[4][4];
         auto tablero = js.find("tablero");
         int tab1[4][4];
         tab1 = *tablero;
-        */cout<<tab1<<endl;
-
+        cout<<tab1<<endl;
+*/
         auto cantFichas = js.find("cantFichas");
         int cantF1 = *cantFichas;
-        cout<<cantF1<<endl;
+        cout<<"La cantidad de fichas son: "<<cantF1<<endl;
 
-        if (t1== false){
-            cout<<"No es su turno"<<endl;
-        }
-        /*string nombre = modJS->obtenerKey(js,"Jugador");
-        string codigo = modJS->obtenerKey(js,"codigo");
-        cout<<inicio<<endl;
-        if (inicio=="iniciado"){
-            cout<<lib<<endl;
-            cout<<"entro"<<endl;
-            lib->Agregar(codigo, nombre);
-        }
-        cout<<"JO"<<endl;
-        cout<<lib<<endl;
-*/
-        //para envairle al cliente
-        //send(sock , message , strlen(message) , 0)
+        cout<<"El cliente es el socket: "<<sock<<endl;
+
+        //jugador se agrega a la cola
+        //colaA::getInstance()->agregar(j1,"127.0.0.1",sock,cod1);
+
+        /*colaA->agregar(j1,"127.0.0.1",sock,cod1);
+
+        //jugador se agrega a una sala especifica
+        sala1->setLista(colaA->buscarJugador(cod1));
+
+        sala1->iniciarJuego();
+
+        //Le envia el tablero
+        json tablero = {
+          sala1->getTablero()
+       };
+
+        cout<<tablero<<endl;
+
+        //string tablero = json::parse(tablero);
+        //enviarJson(tablero);
+
+
+        //Le envia el cantidad de fichas
+        json cantf = {
+          sala1->devolverFichas()
+        };
+        string fichas = json::parse((cantf));
+        cout<<fichas<<endl;
+       */ //enviarJson(fichas,sock);
+
+        /*send(sock , "Solucion modificada" , 19 , 0);
+        send(sock , "Exit" , 5 , 0);
+
+        //Client next
+        clientNext = sock+1;*/
 
         /*if(str == "break"){
             close(sock);
@@ -170,10 +204,17 @@ int servidor::runServer(){
     }
 }
 
-void servidor::enviarJson(string msg) {
+/*void servidor::enviarJson(string msg, int socket) {
 
-    json j = json::parse(msg);
+   // json j = json::parse(msg);
 
-    return;
-}
+        int hSocket, read_size;
+        struct sockaddr_in server;
+        int n = msg.length();
+        char SendToServer[n+1] = {0};
+        strcpy(SendToServer, msg.c_str());
+        size+= msg.size();
+        //Send data to the server
+        send(socket, SendToServer, strlen(SendToServer),0);
+}*/
 

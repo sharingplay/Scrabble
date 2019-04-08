@@ -29,7 +29,7 @@ public:
     int findVal(string tag);
     int findAdd(string add);
 
-    void enviarJson(string msg);
+    //void enviarJson(string msg);
 
 private:
     modificadorJson* modJS;
@@ -37,7 +37,7 @@ private:
     int port;
     void* init_ptr;
     void* current_ptr;
-
+    int clientNext;
 };
 
 
