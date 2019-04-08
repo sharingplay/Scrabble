@@ -30,19 +30,52 @@ SOURCES += \
     nodo.cpp \
     lista.cpp \
     tablero.cpp \
-    jugador.cpp
+    jugador.cpp \
+    bolsa.cpp \
+    palabra.cpp \
+    adjacent.cpp \
+    mainwindow.cpp \
+    boton.cpp \
+    cliente.cpp \
+    ventanavalidar.cpp \
+    lector.cpp \
+    ventanafinpartida.cpp \
+    ventanacomodin.cpp \
+    comodin.cpp
 
 HEADERS += \
     ficha.h \
     lista.h \
     tablero.h \
     jugador.h \
-    nodo.h
+    nodo.h \
+    bolsa.h \
+    palabra.h \
+    adjacent.h \
+    mainwindow.h \
+    ../../../Downloads/Scrabble-server/ServidorCliente/nlohmann/json.hpp \
+    boton.h \
+    cliente.h \
+    ventanavalidar.h \
+    lector.h \
+    ventanafinpartida.h \
+    ventanacomodin.h \
+    comodin.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    mainwindow.ui \
+    ventanavalidar.ui \
+    ventanafinpartida.ui \
+    ventanacomodin.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    imagenes/imagenes.qrc
+
+DISTFILES += \
+    trial.py
