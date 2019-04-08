@@ -7,22 +7,22 @@ class nodo
 {
 private:
     //!
-    //! \brief valor, valor que almacena el nodo
+    //! \brief valor: valor que almacena el nodo
     //!
     ficha* valor = nullptr;
     nodo* siguiente = nullptr;
     int x= 0;
     int y=0;
     //!
-    //! \brief estado, true si esta ocupado, false si esta disponible
+    //! \brief estado: true si esta ocupado, false si esta disponible
     //!
     bool estado=false;
     //!
-    //! \brief puntosAsignados, puntos que vale el nodo con el valor de la ficha
+    //! \brief puntosAsignados: puntos que vale el nodo con el valor de la ficha
     //!
     bool puntosAsignados=false;
     //!
-    //! \brief puntuacion, indica si tiene algun bonus la casilla
+    //! \brief puntuacion: indica si tiene algun bonus la casilla
     //!
     int puntuacion;
     //!

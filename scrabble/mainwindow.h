@@ -13,6 +13,7 @@
 #include "jugador.h"
 #include "QString"
 #include "boton.h"
+#include "botonpuntaje.h"
 #include "ventanafinpartida.h"
 
 namespace Ui {
@@ -34,12 +35,9 @@ public:
 
 private slots:
     //!
-    //! \brief on_pushButtonJugar_clicked, crea el juego cuando se preciona
+    //! \brief on_pushButtonJugar_clicked: crea el juego cuando se preciona
     //!
     void on_pushButtonJugar_clicked();
-    //!
-    //! \brief on_botonUnirse_clicked
-    //!
     void on_botonUnirse_clicked();
 
 

@@ -1,5 +1,7 @@
 #ifndef VENTANAPUNTUACION_H
 #define VENTANAPUNTUACION_H
+#include "tablero.h"
+#include <QString>
 
 #include <QDialog>
 
@@ -14,6 +16,11 @@ class ventanaPuntuacion : public QDialog
 public:
     explicit ventanaPuntuacion(QWidget *parent = nullptr);
     ~ventanaPuntuacion();
+
+private slots:
+    void on_botonPuntaje_clicked();
+
+    void on_botonSalir_clicked();
 
 private:
     Ui::ventanaPuntuacion *ui;

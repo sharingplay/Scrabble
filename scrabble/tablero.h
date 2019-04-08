@@ -27,25 +27,25 @@ public:
     //!
     lista *posiciones = new lista();
     //!
-    //! \brief listaJugadores, lista con los jugadores actuales
+    //! \brief listaJugadores: lista con los jugadores actuales
     //!
     jugador *listaJugadores[1];
     tablero(QGraphicsItem * parent = nullptr);
     //!
-    //! \brief generar, genera el tablero con sus nodos
+    //! \brief generar: genera el tablero con sus nodos
     //!
     void generar();
     //!
-    //! \brief acomodar, centra la ficha en el nodo
-    //! \param x, X de la ficha
-    //! \param y, Y de la ficha
-    //! \param ficha, fichas que se desea acomodar
+    //! \brief acomodar: centra la ficha en el nodo
+    //! \param x: X de la ficha
+    //! \param y: Y de la ficha
+    //! \param ficha: fichas que se desea acomodar
     //! \return la ficha con las coordenadas del nodo acomodada
     //!
     nodo* acomodar(int x, int y,ficha* ficha);
     lista* getPosiciones();
     //!
-    //! \brief Puntuacion, asigna puntaje de acuerdo al bonus del nodo
+    //! \brief Puntuacion: asigna puntaje de acuerdo al bonus del nodo
     //!
     void Puntuacion();
     void adjacentes(lista* x);
@@ -53,7 +53,7 @@ public:
     void imprimirPosiciones();
     void imprimirLetra();
     //!
-    //! \brief getcentro, devuelve el centro del tablero
+    //! \brief getcentro: devuelve el centro del tablero
     //! \return el nodo central
     //!
     nodo* getcentro();

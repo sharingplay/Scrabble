@@ -13,27 +13,28 @@ class jugador
 //    void keyPressEvent(QKeyEvent *tecla);
 private:
     //!
-    //! \brief nombre, nombre ingresado por el usuario
+    //! \brief nombre: nombre ingresado por el usuario
     //!
     QString nombre;
     //!
-    //! \brief puntaje, puntaje del jugador
+    //! \brief puntaje: puntaje del jugador
     //!
-    int puntaje;
     //!
-    //! \brief cantFichas, cantidad de fichas que posee el jugador
+    int puntaje = 0;
+    //!
+    //! \brief cantFichas: cantidad de fichas que posee el jugador
     //!
     int cantFichas;
     //!
-    //! \brief turno, indica si es el turno del para poder jugar
+    //! \brief turno: indica si es el turno del para poder jugar
     //!
     bool turno = false;
     //!
-    //! \brief listaFichas, lista con las fichas que tiene el jugador
+    //! \brief listaFichas: lista con las fichas que tiene el jugador
     //!
     lista* listaFichas = new lista ();
     //!
-    //! \brief ultimoNodo, ultimo nodo accedido por el jugador
+    //! \brief ultimoNodo: ultimo nodo accedido por el jugador
     //!
     nodo *ultimoNodo;
 
@@ -50,14 +51,14 @@ public:
     int getcantFichas();
     bool getTurno();
     //!
-    //! \brief agregarFicha, agrega ficha a la lista del jugador
-    //! \param ficha, ficha que se quiere agregar a la lista
+    //! \brief agregarFicha: agrega ficha a la lista del jugador
+    //! \param ficha: ficha que se quiere agregar a la lista
     //!
     void agregarFicha(ficha* ficha);
     lista* getlista();
     //!
-    //! \brief eliminar, elimina fichas de la lista de jugador
-    //! \param ficha, ficha que se quiere eliminar
+    //! \brief eliminar: elimina fichas de la lista de jugador
+    //! \param ficha: ficha que se quiere eliminar
     //!
     void eliminar(ficha* ficha);
 

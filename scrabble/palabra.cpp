@@ -306,8 +306,7 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
         tablero::getInstance().listaJugadores[0]->setPuntaje(tablero::getInstance().listaJugadores[0]->getPuntaje()+puntuacion);
 
         //agregar puntuacion al jugador
-    }
-    if(direccion==2){
+    }else if(direccion==2){
         while (final!= nullptr && final->getEstado()==true) {
             //restar cantidad de fichas al jugador
             if(final->getPuntosAsignados()==true){
@@ -345,11 +344,11 @@ int palabra::asignarPuntuacion(nodo* final, int direccion){
                 final= final->getRight();
             }
         }
-        puntuacion*=bonus;
-        cout<<puntuacion<<endl;\
 
+        puntuacion*=bonus;
+        cout<<puntuacion<<endl;
         tablero::getInstance().listaJugadores[0]->setPuntaje(tablero::getInstance().listaJugadores[0]->getPuntaje()+puntuacion);
-        //agregar puntuacion al jugador
+
     }
 }
 void palabra::volverFicha(nodo *final){

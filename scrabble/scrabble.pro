@@ -41,7 +41,10 @@ SOURCES += \
     lector.cpp \
     ventanafinpartida.cpp \
     ventanacomodin.cpp \
-    comodin.cpp
+    comodin.cpp \
+    ventanapuntuacion.cpp \
+    botonpuntaje.cpp \
+    ventanacodigo.cpp
 
 HEADERS += \
     ficha.h \
@@ -60,14 +63,19 @@ HEADERS += \
     lector.h \
     ventanafinpartida.h \
     ventanacomodin.h \
-    comodin.h
+    comodin.h \
+    ventanapuntuacion.h \
+    botonpuntaje.h \
+    ventanacodigo.h
 
 FORMS += \
         mainwindow.ui \
     mainwindow.ui \
     ventanavalidar.ui \
     ventanafinpartida.ui \
-    ventanacomodin.ui
+    ventanacomodin.ui \
+    ventanapuntuacion.ui \
+    ventanacodigo.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -77,4 +85,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     imagenes/imagenes.qrc
 
-DISTFILES +=
+DISTFILES += \
+    trial.py

@@ -18,7 +18,7 @@ public:
 
 private slots:
     //!
-    //! \brief on_botonSalir_clicked, cierra la ventana
+    //! \brief on_botonSalir_clicked: cierra la ventana
     //!
     void on_botonSalir_clicked();
 

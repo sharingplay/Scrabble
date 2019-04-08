@@ -18,8 +18,8 @@ private:
 public:
     ficha(QGraphicsItem * parent = nullptr);
     //!
-    //! \brief ficha, constructor de la ficha
-    //! \param letra, letra con la que se quiere crear la ficha
+    //! \brief ficha: constructor de la ficha
+    //! \param letra: letra con la que se quiere crear la ficha
     //!
     ficha (char letra);
     void setLetra(char letra);
@@ -27,8 +27,8 @@ public:
     char getLetra();
     int getValor();
     //!
-    //! \brief dibujar, dibuja la letra en la escena
-    //! \param letra, letra para indicar que imagen dibujar
+    //! \brief dibujar: dibuja la letra en la escena
+    //! \param letra: letra para indicar que imagen dibujar
     //!
     void dibujar(ficha* letra);
     int getInicialX();
@@ -41,12 +41,12 @@ public:
     void setFinalY(int inicial);
 protected:
     //!
-    //! \brief mouseMoveEvent, mueve la ficha y le asgina un (x,y) de acuerdo al mouse
+    //! \brief mouseMoveEvent: mueve la ficha y le asgina un (x,y) de acuerdo al mouse
     //!
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     //!
-    //! \brief mouseReleaseEvent, acomoda la ficha dentro de la matriz del tablero y devuelve el nodo en el qu
+    //! \brief mouseReleaseEvent: acomoda la ficha dentro de la matriz del tablero y devuelve el nodo en el qu
     //!
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 };

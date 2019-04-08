@@ -20,5 +20,6 @@ void ventanaValidar::on_botonCancelar_clicked()
 
 void ventanaValidar::on_botonValidar_clicked()
 {
-
+    ventanaCodigo *ventCod = new ventanaCodigo();
+    ventCod->show();
 }

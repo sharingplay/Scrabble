@@ -21,8 +21,8 @@ void ventanaFinPartida::on_botonSalir_clicked()
 
 void ventanaFinPartida::on_botonGanador_clicked()
 {
-    string ganador;
-    //for (i)
-    ui->labelGanador->setText("             Jugador 1");
+
+    ui->labelGanador->setText(tablero::getInstance().listaJugadores[0]->getNombre()+" "+
+            tablero::getInstance().listaJugadores[0]->getPuntaje());
 
 }

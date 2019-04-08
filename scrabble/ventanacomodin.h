@@ -19,7 +19,7 @@ public:
 
 private slots:
     //!
-    //! \brief on_botonSeleccionar_clicked, establece el valor al nodo comodin cuando se selecciono la letra en la ventana
+    //! \brief on_botonSeleccionar_clicked: establece el valor al nodo comodin cuando se selecciono la letra en la ventana
     //!
     void on_botonSeleccionar_clicked();
 

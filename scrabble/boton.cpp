@@ -1,7 +1,6 @@
 #include "boton.h"
 #include <QObject>
 #include <iostream>
-#include <QGraphicsPixmapItem>
 using namespace std;
 
 boton::boton (QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){

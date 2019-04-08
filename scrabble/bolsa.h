@@ -20,18 +20,18 @@ public:
                return instance;
     }
     //!
-    //! \brief bolsa, contrusctor de la bolsa con las letras a utilizar
+    //! \brief bolsa: contrusctor de la bolsa con las letras a utilizar
     //!
     bolsa();
     int cantidadFichas = 100; //cantidad de fichas
     //!
-    //! \brief repartir, reparte fichas de la bolsa a los jugadores.
-    //! \param cantidad, cantida de fichas que se le deben repartir al jugador
-    //! \param jugador, jugador al que se le debe repartir las fichas
+    //! \brief repartir: reparte fichas de la bolsa a los jugadores.
+    //! \param cantidad: cantida de fichas que se le deben repartir al jugador
+    //! \param jugador: jugador al que se le debe repartir las fichas
     //!
     void repartir(int cantidad, jugador* jugador);
     //!
-    //! \brief crear, crea la bolsa con las fichas acomodadas de forma aleatoria
+    //! \brief crear: crea la bolsa con las fichas acomodadas de forma aleatoria
     //!
     void crear();
 };

@@ -31,5 +31,6 @@
         <file>madera.jpg</file>
         <file>menu.jpg</file>
         <file>scrabble.png</file>
+        <file>score.png</file>
     </qresource>
 </RCC>
