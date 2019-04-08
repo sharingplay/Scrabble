@@ -12,10 +12,11 @@ using namespace std;
 using string = std::string;
 
 int main() {
-    Cliente c1(8090);
-    Cliente c2(8081);
+    Cliente c1(8079);
+    Cliente c2(8079);
+    Cliente c3(8079);
 
-    int matriz[4][4] = {{3,4,5,5},{0,4,2,3},{9,5,2,6}};
+    string matriz[4][4] = {{"C","A","S","A"},{"C","A","R","S"},{"C","O","C","O"}};
 
     json js={
             {"turno",false},
@@ -23,16 +24,25 @@ int main() {
             {"codigo","#RT34"},
             {"puntos", 200},
             {"tablero", matriz},
-            {"cantFichas", 9}
+            {"cantFichas", 5}
     };
 
     json js2={
             {"turno",false},
             {"jugador","Valeria"},
+            {"codigo","#RT35"},
+            {"puntos", 200},
+            {"tablero", matriz},
+            {"cantFichas", 7}
+    };
+
+    json js3={
+            {"turno",true},
+            {"jugador","Raul"},
             {"codigo","#RT34"},
             {"puntos", 200},
             {"tablero", matriz},
-            {"cantFichas", 9}
+            {"cantFichas", 4}
     };
 
     //auto p =js.find("Jugador");
@@ -42,9 +52,11 @@ int main() {
     //json jsonParseado = json::parse(s);
     string s2 = js2.dump();
     //json jsonParseado = json::parse(s2);
+    string s3 = js3.dump();
 
     c1.sendJson(s);
-    c1.sendJson(s2);
+    c2.sendJson(s2);
+    c3.sendJson(s3);
     //c2.sendJson(s2);
 
     return 0;

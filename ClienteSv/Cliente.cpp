@@ -6,6 +6,8 @@
 #include "Cliente.h"
 #include "string"
 
+using namespace std;
+
 Cliente::Cliente(int port) {
 
     this->port = port;
@@ -82,6 +84,7 @@ int Cliente::sendJson(string msg) {
 
     //Create socket
     hSocket = SocketCreate();
+    socketCliente = hSocket;
     if(hSocket == -1)
     {
         printf("Could not create socket\n");
@@ -112,9 +115,43 @@ int Cliente::sendJson(string msg) {
 
     data = server_reply;
 
+    //cout<<read_size<<endl;
+    cout<<data<<endl;
+
     close(hSocket);
     shutdown(hSocket,0);
     shutdown(hSocket,1);
     shutdown(hSocket,2);
 
+    /*int i=1;
+    while(i=1){
+        //Received the data from the server
+        read_size = SocketReceive(hSocket, server_reply, size);
+
+        data = server_reply;
+
+        cout<<read_size<<endl;
+        cout<<data<<endl;
+
+        if (data=="Exit"){
+            close(hSocket);
+            shutdown(hSocket,0);
+            shutdown(hSocket,1);
+            shutdown(hSocket,2);
+            i=0;
+            break;
+        }*/
+
+}
+
+int Cliente::sendMsg(string msg) {
+
+    int hSocket, read_size;
+    struct sockaddr_in server;
+    int n = msg.length();
+    char SendToServer[n+1] = {0};
+    strcpy(SendToServer, msg.c_str());
+    size+= msg.size();
+    //Send data to the server
+    SocketSend(socketCliente, SendToServer, strlen(SendToServer));
 }

@@ -26,6 +26,8 @@ public:
 
     int sendJson(string msg);
 
+    int sendMsg(string msg);
+
     //Create a Socket for server communication
     short SocketCreate(void);
 
@@ -42,6 +44,7 @@ public:
 private:
     int port;
     int size = 0;
+    int socketCliente;
 };
 
 
