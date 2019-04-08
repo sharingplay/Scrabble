@@ -22,7 +22,6 @@ void tablero::generar(){
             x+=50;
             if(i==7 && j==7){
                 this->centro= celda;
-
             }
         }
         x=7;

@@ -32,7 +32,7 @@ void bolsa::repartir(int cantidad, jugador* jugador){
     nodo* temp = jugador->getlista()->Head;
     int x = 100;
     int y = 820;
-    while(temp!= nullptr){
+    while(temp!= nullptr){//reparte las fichas iniiales
         temp->getValor()->setX(x);
         temp->getValor()->setY(y);
         temp->getValor()->setInicialX(x);
@@ -41,7 +41,6 @@ void bolsa::repartir(int cantidad, jugador* jugador){
         temp->getValor()->setFinalY(y);
         temp->getValor()->dibujar(temp->getValor());
         temp= temp->getSiguiente();
-
         x += 50;
     }
     nodo* aux = jugador->getlista()->Head;

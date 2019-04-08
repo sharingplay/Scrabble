@@ -4,6 +4,7 @@
 #include "tablero.h"
 #include "lector.h"
 #include "iostream"
+#include "bolsa.h"
 using namespace std;
 class palabra
 {
@@ -20,7 +21,7 @@ public:
     void quitarDerecha(nodo* final);
     bool unionPalabrasAbajo(nodo* final);
     bool unionPalabrasDerecha(nodo* final);
-
+    void contadorFichas(nodo* final);
 };
 
 

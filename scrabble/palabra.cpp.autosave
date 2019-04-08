@@ -239,7 +239,7 @@ bool palabra::leerDerecha(nodo* final){
                 actual->getValor()->setLetra(comodin::getInstance().letra);
                 actual->getValor()->setValor(comodin::getInstance().valor);
 
-            }
+            }   
             palabra+=actual->getValor()->getLetra();
             actual= actual->getRight();
         }

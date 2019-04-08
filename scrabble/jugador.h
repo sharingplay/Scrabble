@@ -33,6 +33,7 @@ public:
     bool getTurno();
     void agregarFicha(ficha* ficha);
     lista* getlista();
+    void eliminar(ficha* ficha);
 
 };
 
